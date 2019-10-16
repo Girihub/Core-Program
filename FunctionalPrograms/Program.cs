@@ -31,6 +31,7 @@ namespace FunctionalPrograms
                 Console.WriteLine("Enter 8: SumOfThreeInteger");
                 Console.WriteLine("Enter 9: Distance");
                 Console.WriteLine("Enter 10: Quadratic");
+                Console.WriteLine("Enter 11: WindChill");
                 Console.WriteLine("Enter 0: To Exit");
                 Console.WriteLine();
 
@@ -75,6 +76,10 @@ namespace FunctionalPrograms
 
                     case 10:
                         Quadratic.QuadraticFunction();
+                        break;
+
+                    case 11:
+                        WindChill.WindChillFunction();
                         break;
 
                     case 0:

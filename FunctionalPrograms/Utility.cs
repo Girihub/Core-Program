@@ -201,5 +201,17 @@ namespace FunctionalPrograms
             Console.WriteLine("Root 1 of x is " + x1);
             Console.WriteLine("Root 2 of x is " + x2);
         }
+
+        /// <summary>
+        /// Find WindChill value
+        /// </summary>
+        /// <param name="t">temperature as a parameter</param>
+        /// <param name="v">speed as a parameter</param>
+        /// <returns>returns WindChill value</returns>
+        public double WindChillValue(double t, double v)
+        {
+            double w = 35.74 + (0.6215 * t) + (((0.4275 * t) - 35.75) * Math.Pow(v, 0.16));
+            return w;
+        }
     }
 }
