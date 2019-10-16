@@ -150,5 +150,56 @@ namespace FunctionalPrograms
                 Console.WriteLine();
             }
         }
+
+        /// <summary>
+        /// Function to find distinct triplets
+        /// </summary>
+        /// <param name="array">passing array as a parameter</param>
+        public void DistinctTriplets(int[] array)
+        {
+            int count = 0;
+            for (int i = 0; i < array.Length - 2; i++)
+            {
+                for (int j = i + 1; j < array.Length - 1; j++)
+                {
+                    for (int k = j + 1; k < array.Length; k++)
+                    {
+                        if (array[i] + array[j] + array[k] == 0)
+                        {
+                            Console.WriteLine(array[i] + " " + array[j] + " " + array[k]);
+                            count++;
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine("We have found total " + count + " distinct triplets");
+        }
+
+        /// <summary>
+        /// Function to find Euclidean Distance
+        /// </summary>
+        /// <param name="x"> x as a parameter</param>
+        /// <param name="y"> y as a parameter</param>
+        /// <returns>returns double value</returns>
+        public double EuclideanDistance(int x, int y)
+        {
+             return Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+        }
+
+        /// <summary>
+        /// To find the roots of equation
+        /// </summary>
+        /// <param name="a">a as parameter</param>
+        /// <param name="b">b as parameter</param>
+        /// <param name="c">c as parameter</param>
+        public void QuadraticRoots(int a, int b, int c)
+        {
+            int delta = (b * b) - (4 * a * c);
+            double x1 = (-b + Math.Sqrt(Math.Abs(delta))) / (2 * a);
+            double x2 = (-b - Math.Sqrt(Math.Abs(delta))) / (2 * a);
+            Console.WriteLine("Root 1 of x is " + x1);
+            Console.WriteLine("Root 2 of x is " + x2);
+        }
     }
 }
