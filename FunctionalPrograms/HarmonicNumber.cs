@@ -8,6 +8,7 @@ namespace FunctionalPrograms
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Text.RegularExpressions;
 
     /// <summary>
     /// HarmonicNumber as a class
@@ -20,13 +21,14 @@ namespace FunctionalPrograms
         public static void HarmonicNumberFunction()
         {
             Console.WriteLine("Enter number to find it's harmonic value");
-            int num = Convert.ToInt32(Console.ReadLine());
-            while (num == 0)
+            string input = Console.ReadLine();
+            while (!Regex.IsMatch(input, @"^[0-9]+$") || Convert.ToInt32(input) == 0)
             {
-                Console.WriteLine("Number should not be 0");
-                num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter valid number. Greater than 0");
+                input = Console.ReadLine();
             }
 
+            int num = Convert.ToInt32(input);
             Utility utility = new Utility();
             Console.WriteLine("Harmonic value of " + num + " is " + utility.Harmonic(num));
         }

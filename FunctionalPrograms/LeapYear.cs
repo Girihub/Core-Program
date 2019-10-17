@@ -8,6 +8,7 @@ namespace FunctionalPrograms
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Text.RegularExpressions;
 
     /// <summary>
     /// LeapYear as a class
@@ -19,22 +20,29 @@ namespace FunctionalPrograms
         /// </summary>
         public static void LeapYearFunction()
         {
-            Console.WriteLine("Enter 4 digit year to check whether it is leap");
-            int year = Convert.ToInt32(Console.ReadLine());
-            while ((year + string.Empty).Length < 4)
+            try
             {
-                Console.WriteLine("Year should be of 4 digits");
-                year = Convert.ToInt32(Console.ReadLine());
-            }
+                Console.WriteLine("Enter 4 digit year to check whether it is leap");
+                int year = Convert.ToInt32(Console.ReadLine());
+                while ((year + string.Empty).Length < 4)
+                {
+                    Console.WriteLine("Year should be of 4 digits");
+                    year = Convert.ToInt32(Console.ReadLine());
+                }
 
-            Utility utility = new Utility();
-            if (utility.Leap(year))
-            {
-                Console.WriteLine(year + " is leap year");
+                Utility utility = new Utility();
+                if (utility.Leap(year))
+                {
+                    Console.WriteLine(year + " is leap year");
+                }
+                else
+                {
+                    Console.WriteLine(year + " is not a leap year");
+                }
             }
-            else
+            catch (Exception e)
             {
-                Console.WriteLine(year + " is not a leap year");
+                Console.WriteLine(e.Message + " Should be integer");
             }
         }
     }

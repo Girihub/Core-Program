@@ -6,11 +6,12 @@
 namespace FunctionalPrograms
 {
     using System;
+    using System.Linq;
 
     /// <summary>
     /// Program as a class name
     /// </summary>
-   public class Program
+    public class Program
     {
         /// <summary>
         /// Main function
@@ -35,61 +36,72 @@ namespace FunctionalPrograms
                 Console.WriteLine("Enter 0: To Exit");
                 Console.WriteLine();
 
-                int num = Convert.ToInt32(Console.ReadLine());
-                switch (num)
+                string input = Console.ReadLine();
+                bool isAllInt = input.All(char.IsDigit);             
+                if (isAllInt)
                 {
-                    case 1:
-                        ReplaceString.Replaceword();
-                        break;
+                    long num = Convert.ToInt64(input);
+                    switch (num)
+                    {
+                        case 1:
+                            ReplaceString.Replaceword();
+                            break;
 
-                    case 2:
-                        FlipCoin.FlipCoinFunction();
-                        break;
+                        case 2:
+                            FlipCoin.FlipCoinFunction();
+                            break;
 
-                    case 3:
-                        LeapYear.LeapYearFunction();
-                        break;
+                        case 3:
+                            LeapYear.LeapYearFunction();
+                            break;
 
-                    case 4:
-                        PowerOf2.PowerOf2Function();
-                        break;
+                        case 4:
+                            PowerOf2.PowerOf2Function();
+                            break;
 
-                    case 5:
-                        HarmonicNumber.HarmonicNumberFunction();
-                        break;
+                        case 5:
+                            HarmonicNumber.HarmonicNumberFunction();
+                            break;
 
-                    case 6:
-                        PrimeFactors.PrimeFactorFunction();
-                        break;
+                        case 6:
+                            PrimeFactors.PrimeFactorFunction();
+                            break;
 
-                    case 7:
-                        TwoDimensionArray.TwoDimensionArrayFunction();
-                        break;
+                        case 7:
+                            TwoDimensionArray.TwoDimensionArrayFunction();
+                            break;
 
-                    case 8:
-                        SumOfThreeInteger.SumOfThreeFunction();
-                        break;
+                        case 8:
+                            SumOfThreeInteger.SumOfThreeFunction();
+                            break;
 
-                    case 9:
-                        Distance.DistanceFunction();
-                        break;
+                        case 9:
+                            Distance.DistanceFunction();
+                            break;
 
-                    case 10:
-                        Quadratic.QuadraticFunction();
-                        break;
+                        case 10:
+                            Quadratic.QuadraticFunction();
+                            break;
 
-                    case 11:
-                        WindChill.WindChillFunction();
-                        break;
+                        case 11:
+                            WindChill.WindChillFunction();
+                            break;
 
-                    case 0:
-                        exit = true;
-                        break;
+                        case 0:
+                            exit = true;
+                            break;
 
-                    default:
-                        Console.WriteLine("Invalid Input");
-                        break;
+                        default:
+                            Console.WriteLine("Invalid Input");
+                            break;
+                    }
                 }
+                else
+                {
+                    Console.WriteLine("Enter valid digit");
+                }
+
+                Console.WriteLine();
             }            
         }
     }

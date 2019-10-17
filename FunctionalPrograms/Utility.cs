@@ -213,5 +213,46 @@ namespace FunctionalPrograms
             double w = 35.74 + (0.6215 * t) + (((0.4275 * t) - 35.75) * Math.Pow(v, 0.16));
             return w;
         }
+
+        /// <summary>
+        /// To check if number is prime
+        /// </summary>
+        /// <param name="num">number as a parameter</param>
+        /// <returns>return true if number is prime</returns>
+        public bool IsPrime(int num)
+        {
+            if (num <= 2)
+            {
+                return true;
+            }
+
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// To check whether string contains all char values
+        /// </summary>
+        /// <param name="input">input as a parameter</param>
+        /// <returns>returns true if string contains all char values</returns>
+        public bool IsAllLetters(string input)
+        {
+            foreach (char c in input)
+            {
+                if (!char.IsLetter(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
