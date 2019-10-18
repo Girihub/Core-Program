@@ -26,6 +26,11 @@ namespace LogicalPrograms
                 Console.WriteLine("2: CouponNumber");
                 Console.WriteLine("3: StopWatch");
                 Console.WriteLine("4: TicTacToe");
+                Console.WriteLine("5: DayOfWeek");
+                Console.WriteLine("6: TemperatureConversion");
+                Console.WriteLine("7: MonthlyPayment");
+                Console.WriteLine("8: SquareRoot");
+                Console.WriteLine("9: ToBinary");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -47,6 +52,26 @@ namespace LogicalPrograms
 
                         case 4:
                             TicTacToe.TicTacToeFunction();
+                            break;
+
+                        case 5:
+                            DayOfWeek.DayOfWeekFunction();
+                            break;
+
+                        case 6:
+                            TemperatureConversion.TemperatureConversionFunction();
+                            break;
+
+                        case 7:
+                            MonthlyPayment.MonthlyPaymentFunction();
+                            break;
+
+                        case 8:
+                            SquareRoot.SquareRootFunction();
+                            break;
+
+                        case 9:
+                            ToBinary.ToBinaryFunction();
                             break;
 
                         case 0:
