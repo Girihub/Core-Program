@@ -1,0 +1,11 @@
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\bin\Debug\netcoreapp2.2\LogicalPrograms.deps.json
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\bin\Debug\netcoreapp2.2\LogicalPrograms.runtimeconfig.json
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\bin\Debug\netcoreapp2.2\LogicalPrograms.runtimeconfig.dev.json
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\bin\Debug\netcoreapp2.2\LogicalPrograms.dll
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\bin\Debug\netcoreapp2.2\LogicalPrograms.pdb
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\obj\Debug\netcoreapp2.2\LogicalPrograms.csprojAssemblyReference.cache
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\obj\Debug\netcoreapp2.2\LogicalPrograms.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\obj\Debug\netcoreapp2.2\LogicalPrograms.AssemblyInfoInputs.cache
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\obj\Debug\netcoreapp2.2\LogicalPrograms.AssemblyInfo.cs
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\obj\Debug\netcoreapp2.2\LogicalPrograms.dll
+C:\Users\admin\source\Bridge\LogicalPrograms\LogicalPrograms\obj\Debug\netcoreapp2.2\LogicalPrograms.pdb
