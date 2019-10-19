@@ -170,6 +170,23 @@ namespace LogicalPrograms
             return number;
         }      
 
+        public bool IsPowerOfTwo(double number)
+        {
+            if (number == 0)
+            {
+                return false;
+            }
+            while (number > 1)
+            {
+                if (number % 2 != 0)
+                {
+                    return false;
+                }
+                number = number / 2;
+            }
+            return true;
+        }
+
         public void SwapNibbles(int number)
         {
             int[] arr = DecimalToBinaryArray(number);
@@ -201,7 +218,15 @@ namespace LogicalPrograms
             {
                 Console.Write(i);
             }
-            Console.Write(" which is " + BinaryToDecimal(arr1) + " in decimal");
+            Console.Write(" which is " + BinaryToDecimal(arr1) + " in decimal ");
+            if (IsPowerOfTwo(BinaryToDecimal(arr1)))
+            {
+                Console.Write("and is power of 2");
+            }
+            else
+            {
+                Console.Write("and is not a power of 2");
+            }
         }
        
         public void FewestNotes(int amount)

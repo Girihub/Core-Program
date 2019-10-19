@@ -11,89 +11,96 @@ namespace LogicalPrograms
         {
             Utility utility = new Utility();       
             Random random = new Random();
-            string[] arr = {"1","1","1","1","1","1","1","1","1" };
-            //int[] arr1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, };
-            int[] arr2 = new int[arr.Length];
-            int y = 0;
-            while (y < 9 )
-            {
+            string[] str = {"0","1", "2", "3", "4", "5", "6", "7", "8"};
+            int[] arr = {11,11,11,11,11,11,11,11,11 };
+            int j = 0;
 
-                bool done = false;
-                while (!done)
+
+            while (j < 9)
+            {
+                if (WinComputer(str) == true)
                 {
-                    int num = random.Next(0, 9);
-                    if (!utility.contains(arr2, num))
-                    {
-                        arr2[y] = num;
-                        arr[num] = "O";
-                        y++;
-                        done = true;
-                        Console.WriteLine("Computer played " + num);
-                        play(arr);
-                    }
-                }
-                if (isWinC(arr))
-                {
-                    Console.WriteLine("Computer Wins");
+                    Console.WriteLine("Computer Won");
                     return;
                 }
-                Console.WriteLine("Enter number for X");
-                int input = Convert.ToInt32(Console.ReadLine());
-                while (utility.contains(arr2, input))
+                else
                 {
-                    Console.WriteLine("Already taken. Enter another digit");
-                    input = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Your turn Enter no. for X");
+                    int num = Convert.ToInt32(Console.ReadLine());
+                    while (utility.contains(arr, num))
+                    {
+                        Console.WriteLine("Number is already taken. Enter another number");
+                        num = Convert.ToInt32(Console.ReadLine());
+                    }
+                    str[num] = "X";
+                    play(str);
+                    arr[j] = num;
+                    j++;
                 }
-                arr2[y] = input;
-                arr[input] = "X";
-                y++;
-                play(arr);
-                if (isWinH(arr))
+                if (WinHuman(str) == true)
                 {
                     Console.WriteLine("You Won");
                     return;
                 }
-              
+                else
+                {
+                    bool a = false;
+                    while (a == false)
+                    {
+                        int number = random.Next(0, 9);
+                        if (!utility.contains(arr, number)){
+                            arr[j] = number;
+                            str[number] = "O";                           
+                            Console.WriteLine("Computer played " + number);
+                            play(str);
+                            j++;
+                            a = true;
+                        }
+                    }
+                }
             }
+
             Console.WriteLine("Match Draw");
-
-
-        }
-
-        public static void play(string[] arr)
-        {
-           foreach(string i in arr)
-            {
-                Console.Write(i + " ");
-            }
-            Console.WriteLine();
-
-        }
-
-       
-
-        public static bool isWinH(string[] arr)
-        {
-            if (((arr[0] = arr[3] = arr[6]) == "X") || ((arr[1] = arr[4] = arr[7]) == "X") ||
-                ((arr[2] = arr[5] = arr[8]) == "X") || ((arr[0] = arr[4] = arr[8]) == "X") ||
-                ((arr[2] = arr[4] = arr[6]) == "X"))
-            {
-                return true;
-            }
-            return false;
+               
             
-        }
-        public static bool isWinC(string[] arr)
+        } 
+        
+        public static void play(string[] str)
         {
-            if (((arr[0] = arr[3] = arr[6]) == "O") || ((arr[1] = arr[4] = arr[7]) == "O") ||
-                ((arr[2] = arr[5] = arr[8]) == "O") || ((arr[0] = arr[4] = arr[8]) == "O") ||
-                ((arr[2] = arr[4] = arr[6]) == "O"))
+            int k = 0;
+            for(int i = 0; i <= 2; i++)
+            {
+                for(int j = 0; j <= 2; j++)
+                {
+                    Console.Write(str[k]+" ");
+                    k++;
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static bool WinHuman(string[] arr)
+        {
+            if((arr[0]=="X"&&arr[3]=="X"&&arr[6]=="X")||(arr[1] == "X" && arr[4] == "X" && arr[7] == "X")
+                ||(arr[2] == "X" && arr[5] == "X" && arr[8] == "X")|| (arr[0] == "X" && arr[4] == "X" && arr[8] == "X")
+                ||(arr[2] == "X" && arr[4] == "X" && arr[6] == "X") || (arr[0] == "X" && arr[1] == "X" && arr[2] == "X")
+                || (arr[3] == "X" && arr[4] == "X" && arr[5] == "X") || (arr[6] == "X" && arr[7] == "X" && arr[8] == "X"))
             {
                 return true;
             }
             return false;
         }
 
-       
+        public static bool WinComputer(string[] arr)
+        {
+            if ((arr[0] == "O" && arr[3] == "O" && arr[6] == "O") || (arr[1] == "O" && arr[4] == "O" && arr[7] == "O")
+                || (arr[2] == "O" && arr[5] == "O" && arr[8] == "O") || (arr[0] == "O" && arr[4] == "O" && arr[8] == "O")
+                || (arr[2] == "O" && arr[4] == "O" && arr[6] == "O")|| (arr[0] == "O" && arr[1] == "O" && arr[2] == "O")
+                || (arr[3] == "O" && arr[4] == "O" && arr[5] == "O")|| (arr[6] == "O" && arr[7] == "O" && arr[8] == "O"))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

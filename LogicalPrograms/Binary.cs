@@ -13,7 +13,7 @@ namespace LogicalPrograms
                 Console.WriteLine("Enter integer value");
                 int input = Convert.ToInt32(Console.ReadLine());
                 Utility utility = new Utility();
-                utility.SwapNibbles(input);
+                utility.SwapNibbles(input);               
                 Console.WriteLine();
             }
             catch (Exception e)
