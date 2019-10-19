@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="Gambler.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace LogicalPrograms
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Gambler as a class
+    /// </summary>
     public class Gambler
     {
+        /// <summary>
+        /// GamblerFunction as a function
+        /// </summary>
         public static void GamblerFunction()
         {
             try
@@ -20,6 +31,7 @@ namespace LogicalPrograms
                     Console.WriteLine("Goal should be greater than stake. Enter the goal value.");
                     goals = Convert.ToInt32(Console.ReadLine());
                 }
+
                 Console.WriteLine("Enter no. of times you want to play");
                 times = Convert.ToInt32(Console.ReadLine());
                 Utility utility = new Utility();

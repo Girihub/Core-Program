@@ -81,7 +81,7 @@ namespace LogicalPrograms
                             break;
 
                         case 11:
-                            VendingMechine.VendingMechineFuncrion();
+                            VendingMechine.VendingMechineFunction();
                             break;
 
                         case 0:
@@ -93,16 +93,13 @@ namespace LogicalPrograms
                             Console.WriteLine();
                             break;
                     }
-
                 }
                 else
                 {
                     Console.WriteLine("Enter valid input to run any program");
                     Console.WriteLine();
                 }
-
-            }
-            
+            }            
         }
     }
 }

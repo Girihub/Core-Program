@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="VendingMechine.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace LogicalPrograms
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Defined a class
+    /// </summary>
     public class VendingMechine
     {
-        public static void VendingMechineFuncrion()
+        /// <summary>
+        /// Defined a function
+        /// </summary>
+        public static void VendingMechineFunction()
         {
             try
             {
@@ -16,7 +27,7 @@ namespace LogicalPrograms
                 utility.FewestNotes(amount);
                 Console.WriteLine();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message + " Enter integer value");
             }

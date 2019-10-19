@@ -1,25 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="MonthlyPayment.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace LogicalPrograms
 {
-   public class MonthlyPayment
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// MonthlyPayment as a class
+    /// </summary>
+    public class MonthlyPayment
     {
+        /// <summary>
+        /// MonthlyPaymentFunction as a function
+        /// </summary>
         public static void MonthlyPaymentFunction()
         {
             try
             {
                 Console.WriteLine("Enter the principle loan amount");
-                int P = Convert.ToInt32(Console.ReadLine());
+                int loan = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter percent of interest");
-                int R = Convert.ToInt32(Console.ReadLine());
+                int interest = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter no. of years to pay loan");
-                int Y = Convert.ToInt32(Console.ReadLine());
+                int year = Convert.ToInt32(Console.ReadLine());
                 Utility utility = new Utility();
-                Console.WriteLine("You would have to make " + utility.MonthlyPayments(P, R, Y) + " monthly to pay of a " + P + " principle loan at " + R + " percent interest compounded monthly");
+                Console.WriteLine("You would have to make " + utility.MonthlyPayments(loan, interest, year) + " monthly to pay of a " + loan + " principle loan at " + interest + " percent interest compounded monthly");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }

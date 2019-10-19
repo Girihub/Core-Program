@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="ToBinary.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace LogicalPrograms
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// ToBinary as a class
+    /// </summary>
     public class ToBinary
     {
+        /// <summary>
+        /// ToBinaryFunction as a function
+        /// </summary>
         public static void ToBinaryFunction()
         {
             try
@@ -15,7 +26,7 @@ namespace LogicalPrograms
                 Utility utility = new Utility();
                 utility.BinaryOf(number);                
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }

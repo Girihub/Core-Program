@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="StopWatch.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace LogicalPrograms
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// StopWatch as a function
+    /// </summary>
     public class StopWatch
     {
+        /// <summary>
+        /// StopWatchFunction as a function
+        /// </summary>
         public static void StopWatchFunction()
         {
             try
@@ -20,6 +31,7 @@ namespace LogicalPrograms
                     Console.WriteLine("Press 1 to measure elapsed time");
                     input = Convert.ToInt32(Console.ReadLine());
                 }
+
                 stop = utility.Time();
                 Console.WriteLine("Elapsed time is " + utility.ElapsedTime(start, stop) + " milliseconds");
             }

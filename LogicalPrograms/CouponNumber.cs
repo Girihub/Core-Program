@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="CouponNumber.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace LogicalPrograms
 {
-   public class CouponNumber
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// CouponNumber as a class
+    /// </summary>
+    public class CouponNumber
     {
+        /// <summary>
+        /// CouponNumberFunction as a function
+        /// </summary>
         public static void CouponNumberFunction()
         {
             try
@@ -15,11 +26,10 @@ namespace LogicalPrograms
                 Utility utility = new Utility();
                 utility.Coupon(input);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-
         }
     }
 }

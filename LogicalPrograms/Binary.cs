@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="Binary.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace LogicalPrograms
 {
-   public class Binary
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Binary as class
+    /// </summary>
+    public class Binary
     {
+        /// <summary>
+        /// BinaryFunction as a function
+        /// </summary>
         public static void BinaryFunction()
         {
             try

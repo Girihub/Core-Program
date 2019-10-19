@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="TemperatureConversion.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace LogicalPrograms
 {
-   public class TemperatureConversion
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// TemperatureConversion as a class
+    /// </summary>
+    public class TemperatureConversion
     {
+        /// <summary>
+        /// TemperatureConversionFunction as a function
+        /// </summary>
         public static void TemperatureConversionFunction()
         {
             try
@@ -33,7 +44,7 @@ namespace LogicalPrograms
                         break;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message + " Enter integer input");
             }
