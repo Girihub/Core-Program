@@ -13,16 +13,7 @@ namespace LogicalPrograms
                 Console.WriteLine("Enter decimal number to find it binary representation");
                 int number = Convert.ToInt32(Console.ReadLine());
                 Utility utility = new Utility();
-                int[] arr = utility.BinaryOf(number);
-                for(int i = 0; i < arr.Length; i++)
-                {
-                    if((i % 4)-3== 0)
-                    {
-                        Console.Write(" ");
-                    }
-                    Console.Write(arr[i]);
-                }
-                Console.WriteLine();
+                utility.BinaryOf(number);                
             }
             catch(Exception e)
             {

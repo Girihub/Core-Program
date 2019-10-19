@@ -117,9 +117,9 @@ namespace LogicalPrograms
                 t = ((c / t) + t) / 2;
             }
             return t;
-        }
+        }      
 
-        public int[] BinaryOf(int number)
+        public void BinaryOf(int number)
         {
             int[] arr = new int[10];
             int i = 0;
@@ -129,14 +129,107 @@ namespace LogicalPrograms
                 number = number / 2;
                 i++;
             }
-            int[] arr1 = new int[i];
-            int k = 0;
-            for(int j = i-1; j >= 0; j--)
+            for(int j = i - 1; j >= 0; j--)
             {
-                arr1[k] = arr[j];
-                k++;
+                if((j % 4) - 3 == 0)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write(arr[j]);
+            }
+            Console.WriteLine();
+        }
+
+        public int[] DecimalToBinaryArray(int number)
+        {
+            int[] arr = new int[8];
+            int[] arr1 = new int[8];
+            int i = 0;
+            int len = arr.Length;
+            while (number > 0)
+            {
+                arr[i] = number % 2;
+                number = number / 2;
+                i++;
+            }
+            for (int j = i - 1; j >= 0; j--)
+            {
+                arr1[len - 1 - j] = arr[j];
             }
             return arr1;
+        }
+
+        public double BinaryToDecimal(int[] arr)
+        {
+            double number = 0;
+            int len = arr.Length;
+            for(int i = 0; i <arr.Length; i++)
+            {
+               number+= (arr[len - 1 - i]) * (Math.Pow(2, i));
+            }
+            return number;
+        }      
+
+        public void SwapNibbles(int number)
+        {
+            int[] arr = DecimalToBinaryArray(number);
+            int mid = arr.Length / 2;
+            int[] FirstNibble = new int[mid];
+            int[] SecondNibble = new int[mid];
+            for(int i = 0; i < mid; i++)
+            {
+                FirstNibble[i] = arr[i];
+                SecondNibble[i] = arr[mid + i];
+            }
+            int length1 = FirstNibble.Length;
+            int length2 = SecondNibble.Length;
+            mid = (length1 + length2) / 2;
+            int[] arr1 = new int[length1 + length2];
+            for(int j = 0; j < mid; j++)
+            {
+                arr1[j] = SecondNibble[j];
+                arr1[mid + j] = FirstNibble[j];
+            }
+            Console.Write("Binary of " + number + " is ");
+            foreach(int i in arr)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine();
+            Console.Write("After swapping nibbles it becomes ");
+            foreach(int i in arr1)
+            {
+                Console.Write(i);
+            }
+            Console.Write(" which is " + BinaryToDecimal(arr1) + " in decimal");
+        }
+       
+        public void FewestNotes(int amount)
+        {
+            int[] notes = { 1000, 500, 100, 50, 10, 5, 2, 1 };
+            int total = 0;
+            for(int i = 0; i < notes.Length; i++)
+            {
+                if (amount >= notes[i])
+                {
+                    int numberOfNote = amount / notes[i];
+                    Console.WriteLine(numberOfNote + " notes needed of " + notes[i]);
+                    amount = amount - (notes[i] * numberOfNote);
+                    total += numberOfNote;
+                }                
+            }
+            Console.WriteLine("Total " + total + " notes will need");
+        }
+
+        public void DayOfweek(int d,int m,int y)
+        {
+            double y0 = y - Math.Floor((double)(14 - m) / 12);
+            double x = y0 + Math.Floor(y0 / 4) - Math.Floor(y0 / 100) + Math.Floor(y0 / 400);
+            double m0 = m + 12 * Math.Floor((double)((14 - m) / 12)) - 2;
+            double d0 = Math.Ceiling((d + x + 31 * m0 / 12) % 7);
+            string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+            string[] days = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+            Console.WriteLine(days[(int)d0 - 1]);
         }
     }
 }

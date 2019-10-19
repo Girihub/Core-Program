@@ -31,6 +31,8 @@ namespace LogicalPrograms
                 Console.WriteLine("7: MonthlyPayment");
                 Console.WriteLine("8: SquareRoot");
                 Console.WriteLine("9: ToBinary");
+                Console.WriteLine("10: ToSwapNibbles");
+                Console.WriteLine("11: VendingMechine");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -72,6 +74,14 @@ namespace LogicalPrograms
 
                         case 9:
                             ToBinary.ToBinaryFunction();
+                            break;
+
+                        case 10:
+                            Binary.BinaryFunction();
+                            break;
+
+                        case 11:
+                            VendingMechine.VendingMechineFuncrion();
                             break;
 
                         case 0:
