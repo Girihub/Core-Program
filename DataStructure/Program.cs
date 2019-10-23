@@ -13,6 +13,7 @@ namespace DataStructure
                 Console.WriteLine("1: UnOrdered List");
                 Console.WriteLine("2: Ordered List");
                 Console.WriteLine("3: BalancedParenthesis");
+                Console.WriteLine("4: BankingCashCounter");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -30,6 +31,10 @@ namespace DataStructure
 
                         case 3:
                             BalancedParenthesis.BalancedParenthesisFunction();
+                            break;
+
+                        case 4:
+                            BankingCashCounter.BankingCashCounterFunction();
                             break;
 
                         case 0:
