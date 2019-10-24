@@ -11,7 +11,7 @@ namespace DataStructure.Utility
         Object[] queue = new Object[limit];
         public void enqueue(Object data)
         {
-            if (!isFull())
+            if (!IsFull())
             {
                 queue[rear] = data;
                 rear = (rear + 1) % limit;
@@ -25,11 +25,12 @@ namespace DataStructure.Utility
             {
                 Console.Write(queue[(i + front)% limit] +" ");
             }
+            Console.WriteLine();
         }
 
         public void dequeue()
         {
-            if (!isEmpty())
+            if (!IsEmpty())
             {
             size--;
             Object value = queue[front];
@@ -42,14 +43,19 @@ namespace DataStructure.Utility
             return size;
         }
 
-        public bool isEmpty()
+        public bool IsEmpty()
         {
             return Size() == 0;
         }
 
-        public bool isFull()
+        public bool IsFull()
         {
             return Size() == limit;
+        }
+
+        public Object get()
+        {
+            return queue[(front)%limit];
         }
     }
 }
