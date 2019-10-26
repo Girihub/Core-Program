@@ -285,21 +285,27 @@ namespace DataStructure.Utility
             if (head.next == null)
             {
                 head = n;
-                head.next = null;
+                n.next = null;
             }
             else if(index == 0)
             {
                 Node n1 = head.next;
                 head = n;
-                head.next = n1;
-            }
+                n.next = n1;
+            }else if (index == 1)
+            {
+                Node n1 = head.next.next;
+                head.next = n;
+                n.next = n1;                
+            } 
+            else
             {
                 Node n2 = head;
                 for (int i = 0; i < index - 1; i++)
                 {
                     n2 = n2.next;
                 }
-                Node n3 = n2.next.next; ;
+                Node n3 = n2.next.next;
                 n2.next = n;
                 n.next = n3;
             }
@@ -323,6 +329,31 @@ namespace DataStructure.Utility
                 Node n1 = n.next;
                 n.next = node;
                 node.next = n1;
+            }
+        }
+
+      
+
+        public void OrederLinkedList()
+        {
+            if (this.size()<2)
+            {
+                return;
+            }
+            else
+            {
+                for (int i = 0; i < this.size(); i++)
+                {
+                    for (int j = 0; j < this.size() - 1; j++)
+                    {
+                        if (Convert.ToInt32(this.get(j)) > Convert.ToInt32(this.get(j + 1)))
+                        {
+                            int temp = Convert.ToInt32(this.get(j));
+                            this.put(j, this.get(j + 1));
+                            this.put(j + 1, temp);
+                        }
+                    }
+                }
             }
         }
     }
