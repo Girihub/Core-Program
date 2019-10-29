@@ -1,13 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using DataStructure.Utility;
-
+﻿//----------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using DataStructure.Utility;
+
+    /// <summary>
+    /// UnOrderedList as a class
+    /// </summary>
     public class UnOrderedList
     {
+        /// <summary>
+        /// UnOrderedListFunction as a function
+        /// </summary>
         public static void UnOrderedListFunction()
         {
             try

@@ -1,14 +1,25 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using DataStructure.Utility;
-
+﻿//----------------------------------------------------
+// <copyright file="HashChain.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using DataStructure.Utility;
+
+    /// <summary>
+    /// HashChain as a class
+    /// </summary>
     public class HashChain
     {
+        /// <summary>
+        /// HashChainFunction as a function
+        /// </summary>
         public static void HashChainFunction()
         {
             try

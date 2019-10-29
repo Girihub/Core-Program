@@ -1,13 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
-using DataStructure.Utility;
-
+﻿//----------------------------------------------------
+// <copyright file="BalancedParenthesis.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using DataStructure.Utility;
+
+    /// <summary>
+    /// BalancedParenthesis as a class
+    /// </summary>
     public class BalancedParenthesis
     {
+        /// <summary>
+        /// BalancedParenthesisFunction as a function
+        /// </summary>
         public static void BalancedParenthesisFunction()
         {
             try

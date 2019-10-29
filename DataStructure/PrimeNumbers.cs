@@ -1,55 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="PrimeNumbers.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// PrimeNumbers as a class
+    /// </summary>
     public class PrimeNumbers
     {
+        /// <summary>
+        /// TwoDimensionArray as a function
+        /// </summary>
         public static void TwoDimensionArray()
         {
-            UtilityFunctions utility = new UtilityFunctions();
-            int[] primeNumbers = new int[1000];
-            int count = 0;
-            for(int i = 1; i <= 1000; i++)
+            try
             {
-                if (utility.IsPrime(i))
+                UtilityFunctions utility = new UtilityFunctions();
+                int[] primeNumbers = new int[1000];
+                int count = 0;
+                for (int i = 1; i <= 1000; i++)
                 {
-                    primeNumbers[count] = i;
-                    count++;
-                }
-            }
-            int[,] array = new int[10, 100];
-            int min = 0, max = 100, k = 0;
-            for(int i = 0; i < 10; i++)
-            {
-                for(int j = 0; j < 100; j++)
-                {
-                    if(primeNumbers[k] < max && primeNumbers[k] > min)
+                    if (utility.IsPrime(i))
                     {
-                        array[i, j] = primeNumbers[k];
-                        k++;
-                    }
-                    else
-                    {
-                        min = max;
-                        max = max + 100;
-                        break;
+                        primeNumbers[count] = i;
+                        count++;
                     }
                 }
-            }
-            for(int i = 0; i < 10; i++)
-            {
-                for(int j = 0; j < 100; j++)
+                int[,] array = new int[10, 1000];
+                int min = 0, max = 100, k = 0;
+                for (int i = 0; i < 10; i++)
                 {
-                    if (array[i, j] != 0)
+                    for (int j = 0; j < 100; j++)
                     {
-                        Console.Write(array[i, j] + " ");
+                        if (primeNumbers[k] < max && primeNumbers[k] > min)
+                        {
+                            array[i, j] = primeNumbers[k];
+                            k++;
+                        }
+                        else
+                        {
+                            min = max;
+                            max = max + 100;
+                            break;
+                        }
                     }
+                }
+                for (int i = 0; i < 10; i++)
+                {
+                    for (int j = 0; j < 100; j++)
+                    {
+                        if (array[i, j] != 0)
+                        {
+                            Console.Write(array[i, j] + " ");
+                        }
+                    }
+                    Console.WriteLine();
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine();
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

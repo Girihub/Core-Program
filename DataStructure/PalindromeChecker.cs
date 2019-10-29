@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DataStructure.Utility;
-
+﻿//----------------------------------------------------
+// <copyright file="PalindromeChecker.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using DataStructure.Utility;
+
+    /// <summary>
+    /// PalindromeChecker as a class
+    /// </summary>
     public class PalindromeChecker
     {
+        /// <summary>
+        /// PalindromeCheckerFunction as a function
+        /// </summary>
         public static void PalindromeCheckerFunction()
         {
             try

@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DataStructure.Utility;
-using System.IO;
-
+﻿//----------------------------------------------------
+// <copyright file="UtilityFunctions.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using DataStructure.Utility;
+    using System.IO;
+
+    /// <summary>
+    /// UtilityFunctions as a function which contains all some functions of programs
+    /// </summary>
     public class UtilityFunctions
     {
         public bool PalindromCheck(string input)

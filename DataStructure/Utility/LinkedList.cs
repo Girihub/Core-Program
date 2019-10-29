@@ -1,38 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="LinkedList.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure.Utility
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// LinkedList as a class
+    /// </summary>
     public class LinkedList
     {
         Node head;
 
+        /// <summary>
+        /// Function to create LinkedList
+        /// </summary>
+        /// <returns>returns new LinkedList</returns>
         public LinkedList List()
         {
             return new LinkedList();
         }
 
+        /// <summary>
+        /// Function to append the data in linked list
+        /// </summary>
+        /// <param name="data">data as a parameter</param>
         public void append(Object data)
         {
-            Node n = new Node();
-            n.data = data;
-            n.next = null;
+            Node node = new Node();
+            node.data = data;
+            node.next = null;
             if (head == null)
             {
-                head = n;
+                head = node;
             }
             else
             {
-                Node n1 = head;
-                while (n1.next != null)
+                Node tempNode = head;
+                while (tempNode.next != null)
                 {
-                    n1 = n1.next;
+                    tempNode = tempNode.next;
                 }
-                n1.next = n;
+                tempNode.next = node;
             }
         }
 
+        /// <summary>
+        /// Function to show or print data in linked list
+        /// </summary>
         public void show()
         {
             if (head == null)
@@ -41,32 +60,39 @@ namespace DataStructure.Utility
             }
             else
             {
-                Node n = head;
-                while (n != null)
+                Node node = head;
+                while (node != null)
                 {
-                    Console.Write(n.data+" ");
-                    n = n.next;
+                    Console.Write(node.data+" ");
+                    node = node.next;
                 }
             }
         }
 
+        /// <summary>
+        /// Function to add the data at the front
+        /// </summary>
+        /// <param name="data">data as a parameter</param>
         public void add(Object data)
         {
-            Node n = new Node();
-            n.data = data;
+            Node node = new Node();
+            node.data = data;
             if (head == null)
             {
-                head = n;
+                head = node;
                 head.next = null;
             }
             else
             {
-                Node n1 = head;
-                head = n;
-                head.next = n1;
+                Node tempNode = head;
+                head = node;
+                head.next = tempNode;
             }
         }
 
+        /// <summary>
+        /// Function to remove data from the front
+        /// </summary>
         public void shift()
         {
             if (head == null)
@@ -79,10 +105,14 @@ namespace DataStructure.Utility
             }
         }
 
+        /// <summary>
+        /// Function to remove the data from the end
+        /// </summary>
+        /// <returns>returns the removed data</returns>
         public Object pop()
         {
-            Node n = head;
-            Node n1 = head;
+            Node tempNodeOne = head;
+            Node tempNodeTwo = head;
             if (head == null)
             {
                 Console.WriteLine("List is empty");
@@ -90,20 +120,24 @@ namespace DataStructure.Utility
             else if (head.next == null)
             {
                 head = null;
-                return n.data;
+                return tempNodeOne.data;
             }
             else
             {                
-                while (n.next.next != null)
+                while (tempNodeOne.next.next != null)
                 {
-                    n = n.next;
+                    tempNodeOne = tempNodeOne.next;
                 }
-                n1 = n.next;
-                n.next = null;
+                tempNodeTwo = tempNodeOne.next;
+                tempNodeOne.next = null;
             }
-            return n1.data;
+            return tempNodeTwo.data;
         }
 
+        /// <summary>
+        /// Function to count the size of linked list
+        /// </summary>
+        /// <returns></returns>
         public int size()
         {
             int count = 0;
@@ -113,60 +147,70 @@ namespace DataStructure.Utility
             }
             else
             {
-                Node n = head;
-                while (n != null)
+                Node tempNode = head;
+                while (tempNode != null)
                 {
                     count++;
-                    n = n.next;
+                    tempNode = tempNode.next;
                 }
                 return count;
             }
         }
 
+        /// <summary>
+        /// Function to insert the data at given index
+        /// </summary>
+        /// <param name="index">index as a parameter</param>
+        /// <param name="data">data as a parameter</param>
         public void insert(int index, Object data)
         {
-            Node n = new Node();
-            n.data = data;
+            Node node = new Node();
+            node.data = data;
             if (head == null)
             {
-                head = n;
+                head = node;
                 head.next = null;
             }
             else if(index==0)
             {
-                Node n1 = head;
-                head = n;
-                head.next = n1;
+                Node tempNodeOne = head;
+                head = node;
+                head.next = tempNodeOne;
             }
             else
             {
-                Node n1 = head;
+                Node tempNodeOne = head;
                 for(int i = 0; i < index-1; i++)
                 {
-                    n1 = n1.next;
-                    if (n1.next == null)
+                    tempNodeOne = tempNodeOne.next;
+                    if (tempNodeOne.next == null)
                     {
-                        Node n3 = n1.next;
-                        n1.next = n;
-                        n.next = n3;
+                        Node tempNodeThree = tempNodeOne.next;
+                        tempNodeOne.next = node;
+                        node.next = tempNodeThree;
                         return;
                     }
 
                 }
-                Node n2 = n1.next;
-                n1.next = n;
-                n.next = n2;
+                Node tempNodeTwo = tempNodeOne.next;
+                tempNodeOne.next = node;
+                node.next = tempNodeTwo;
             }
         }
 
+        /// <summary>
+        /// Function to remove data from the given index
+        /// </summary>
+        /// <param name="index">index as a parameter</param>
+        /// <returns>returns removed data</returns>
         public Object pop(int index)
         {
-            Node n = head;
-            Node n2 = head;
+            Node node = head;
+            Node tempNodeOne = head;
             if (index == 0)
             {
                 head = head.next;
-                return n.data;
+                return node.data;
             }
             if(index >= size())
             {                
@@ -174,59 +218,72 @@ namespace DataStructure.Utility
             }
             for(int i = 0; i < index - 1; i++)
             {
-                n = n.next;             
+                node = node.next;             
             }
-            Node n1 = n;
-            n2 = n.next;
-            n.next = n1.next.next;
-            return n2.data;
+            Node tempNodeTwo = node;
+            tempNodeOne = node.next;
+            node.next = tempNodeTwo.next.next;
+            return tempNodeOne.data;
         }
 
+        /// <summary>
+        /// Function to remove given data from linked list
+        /// </summary>
+        /// <param name="data">data, to be removed, as a parameter</param>
         public void remove(Object data)
         {
-            Node n = head, prev = null;
+            Node tempNode = head, prev = null;
             if (head == null)
             {
                 Console.WriteLine("List is empty");
             }
             else
             {
-               if(n!=null && n.data+"" == data+"")
+               if(tempNode != null && tempNode.data+"" == data+"")
                 {
-                    head = n.next;
+                    head = tempNode.next;
                     return;
                 }
-               while(n!=null && n.data+"" != data+"")
+               while(tempNode != null && tempNode.data+"" != data+"")
                 {
-                    prev = n;
-                    n = n.next;
+                    prev = tempNode;
+                    tempNode = tempNode.next;
                 }
-                if (n == null)
+                if (tempNode == null)
                 {
                     return;
                 }
-                prev.next = n.next;
+                prev.next = tempNode.next;
             }
         }
 
+        /// <summary>
+        /// Function to search the given data in the linked list
+        /// </summary>
+        /// <param name="data">data, to be searched, as a parameter</param>
+        /// <returns>returns true if the given data found</returns>
         public bool search(Object data)
         {
             if (head == null)
             {
                 return false;
             }
-            Node n = head;            
-            while (n != null )
+            Node tempNode = head;            
+            while (tempNode != null )
             {
-                if (n.data + "" == data + "")
+                if (tempNode.data + "" == data + "")
                 {
                     return true;
                 }
-                n = n.next;
+                tempNode = tempNode.next;
             }
             return false;
         }
-
+        
+        /// <summary>
+        /// Function to check if the linked is empty
+        /// </summary>
+        /// <returns>returns true if linked list is empty</returns>
         public bool IsEmpty()
         {
             if (head == null)
@@ -236,32 +293,42 @@ namespace DataStructure.Utility
             return false;
         }
 
+        /// <summary>
+        /// Function to find index number of given data
+        /// </summary>
+        /// <param name="data">data as a parameter</param>
+        /// <returns>returns index number of given data</returns>
         public int index(Object data)
         {
             int find = 0;
-            Node n = head;
-            while(n!=null && n.data+"" != data + "")
+            Node tempNode = head;
+            while(tempNode != null && tempNode.data+"" != data + "")
             {
-                n = n.next;
+                tempNode = tempNode.next;
                 find++;
             }
-            if (n == null)
+            if (tempNode == null)
             {
                 return -1;
             }
             return find;
         }
         
+        /// <summary>
+        /// Function to get the data by index number
+        /// </summary>
+        /// <param name="index">index number as a parameter</param>
+        /// <returns>returns data from given index number</returns>
         public Object get(int index)
         {
-            Node n = head;
+            Node tempNode = head;
             if (head == null)
             {
                 return null;
             }
             else if (index == 0)
             {
-                return n.data;
+                return tempNode.data;
             }
             else
             {
@@ -271,46 +338,55 @@ namespace DataStructure.Utility
                 }
                 for(int i = 0; i < index-1; i++)
                 {
-                    n = n.next;
+                    tempNode = tempNode.next;
                 }
-                n = n.next;
-                return n.data;
+                tempNode = tempNode.next;
+                return tempNode.data;
             }
         }
 
+        /// <summary>
+        /// Function to replace or put data at given index number
+        /// </summary>
+        /// <param name="index">index number as a parameter</param>
+        /// <param name="data">data as a parameter</param>
         public void put(int index, Object data)
         {
-            Node n = new Node();
-            n.data = data;
+            Node node = new Node();
+            node.data = data;
             if (head.next == null)
             {
-                head = n;
-                n.next = null;
+                head = node;
+                node.next = null;
             }
             else if(index == 0)
             {
-                Node n1 = head.next;
-                head = n;
-                n.next = n1;
+                Node tempNode = head.next;
+                head = node;
+                node.next = tempNode;
             }else if (index == 1)
             {
-                Node n1 = head.next.next;
-                head.next = n;
-                n.next = n1;                
+                Node tempNode = head.next.next;
+                head.next = node;
+                node.next = tempNode;                
             } 
             else
             {
-                Node n2 = head;
+                Node tempNodeOne = head;
                 for (int i = 0; i < index - 1; i++)
                 {
-                    n2 = n2.next;
+                    tempNodeOne = tempNodeOne.next;
                 }
-                Node n3 = n2.next.next;
-                n2.next = n;
-                n.next = n3;
+                Node tempNodeTwo = tempNodeOne.next.next;
+                tempNodeOne.next = node;
+                node.next = tempNodeTwo;
             }
         }
 
+        /// <summary>
+        /// Function to add the data in linked list by ascending order
+        /// </summary>
+        /// <param name="data">data as a parameter</param>
         public void addOrder(Object data)
         {
             Node node = new Node();
@@ -322,21 +398,22 @@ namespace DataStructure.Utility
             }
             else
             {
-                Node n = head;
-                while(n.next!=null && Convert.ToInt32(n.next.data) < Convert.ToInt32(data)){
-                    n = n.next;
+                Node tempNodeOne = head;
+                while(tempNodeOne.next != null && Convert.ToInt32(tempNodeOne.next.data) < Convert.ToInt32(data)){
+                    tempNodeOne = tempNodeOne.next;
                 }
-                Node n1 = n.next;
-                n.next = node;
-                node.next = n1;
+                Node tempNodeTwo = tempNodeOne.next;
+                tempNodeOne.next = node;
+                node.next = tempNodeTwo;
             }
         }
-
       
-
+        /// <summary>
+        /// Function to arrange linked list in ascending order
+        /// </summary>
         public void OrederLinkedList()
         {
-            if (this.size()<2)
+            if (this.size() < 2)
             {
                 return;
             }

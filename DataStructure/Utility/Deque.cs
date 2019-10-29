@@ -1,13 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//----------------------------------------------------
+// <copyright file="Deque.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure.Utility
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Deque as a class
+    /// </summary>
     public class Deque
     {
         Node head;
-
+        /// <summary>
+        /// Function to add data to the front
+        /// </summary>
+        /// <param name="data">data as a parameter</param>
         public void AddFront(Object data)
         {
             Node node = new Node();
@@ -25,6 +36,10 @@ namespace DataStructure.Utility
             }
         }
 
+        /// <summary>
+        /// Function to add data to the rear
+        /// </summary>
+        /// <param name="data">data as a parameter</param>
         public void AddRear(Object data)
         {
             Node node = new Node();
@@ -45,6 +60,10 @@ namespace DataStructure.Utility
             }
         }
 
+        /// <summary>
+        /// Function to remove data from the front
+        /// </summary>
+        /// <returns>Returns removed data</returns>
         public Object RemoveFront()
         {
             if (head == null)
@@ -59,6 +78,10 @@ namespace DataStructure.Utility
             }
         }
 
+        /// <summary>
+        /// Function to remove data at the rear
+        /// </summary>
+        /// <returns>Returns removed data</returns>
         public Object RemoveRear()
         {
             if (head == null)
@@ -84,6 +107,10 @@ namespace DataStructure.Utility
             }
         }
 
+        /// <summary>
+        /// Function to count size of deque
+        /// </summary>
+        /// <returns>Returns size of deque</returns>
         public int Size()
         {
             int count = 0;
@@ -103,6 +130,10 @@ namespace DataStructure.Utility
             }
         }
 
+        /// <summary>
+        /// Function to check if deque is empty
+        /// </summary>
+        /// <returns>Returns true if empty. False otherwise</returns>
         public bool IsEmpty()
         {
             return Size() == 0;

@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DataStructure.Utility;
-
+﻿//----------------------------------------------------
+// <copyright file="BankingCashCounter.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using DataStructure.Utility;
+
+    /// <summary>
+    /// BankingCashCounter as a class name
+    /// </summary>
     public class BankingCashCounter
     {
+        /// <summary>
+        /// BankingCashCounterFunction as a function
+        /// </summary>
         public static void BankingCashCounterFunction()
         {
             try
