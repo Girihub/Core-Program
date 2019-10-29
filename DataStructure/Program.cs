@@ -17,6 +17,8 @@ namespace DataStructure
                 Console.WriteLine("5: PalindromeChecker");
                 Console.WriteLine("6: HashChain");
                 Console.WriteLine("7: PrimeNumbers");
+                Console.WriteLine("8: PrimeAnagram By Stack");
+                Console.WriteLine("9: PrimeAnagram By Queue");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -50,6 +52,14 @@ namespace DataStructure
 
                         case 7:
                             PrimeNumbers.TwoDimensionArray();
+                            break;
+
+                        case 8:
+                            PrimeAnagramStack.PrimeAndAnagram();
+                            break;
+
+                        case 9:
+                            PrimeAnagramQueue.PrimeAndAnagram();
                             break;
 
                         case 0:

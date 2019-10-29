@@ -81,6 +81,28 @@ namespace DataStructure
                     return false;
                 }
             }
+            return input > 1;
+        }
+
+        public bool IsAnagram(string stringOne, string stringTwo)
+        {
+            if (stringOne.Length != stringTwo.Length)
+            {
+                return false;
+            }
+
+            char[] stringOneArray = stringOne.ToLower().ToCharArray();
+            char[] stringTwoArray = stringTwo.ToLower().ToCharArray();
+            Array.Sort(stringOneArray);
+            Array.Sort(stringTwoArray);
+            for (int i = 0; i < stringOneArray.Length; i++)
+            {
+                if(stringOneArray[i]!= stringTwoArray[i])
+                {
+                    return false;
+                }
+            }
+
             return true;
         }
       
