@@ -31,12 +31,12 @@ namespace DataStructure
                     {
                         if (utility.IsAnagram(i + string.Empty, j + string.Empty) && utility.IsPrime(i) && utility.IsPrime(j))
                         {
-                            queue.enqueue(j);
+                            queue.Enqueue(j);
                         }
                     }
                 }
 
-                queue.show();
+                queue.Show();
                 Console.WriteLine();
             }
             catch (Exception e)

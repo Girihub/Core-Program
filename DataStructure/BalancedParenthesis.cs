@@ -6,8 +6,6 @@
 namespace DataStructure
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
     using System.Text.RegularExpressions;
     using DataStructure.Utility;
 
@@ -26,22 +24,25 @@ namespace DataStructure
                 Stack stack = new Stack();
                 Console.WriteLine("Enter arithmatic expression");
                 string expression = Console.ReadLine();
+
+                /// Regex expression to accept elements which is necessary for valid expression
                 while (!Regex.IsMatch(expression, @"^[0-9-+/*)(]+$"))
                 {
                     Console.WriteLine("Enter valid arithmatic expression");
                     expression = Console.ReadLine();
                 }
 
+                /// iterating to push elements on respective condition
                 for (int i = 0; i < expression.Length; i++)
                 {
                     if (expression[i] + string.Empty == "(")
                     {
-                        stack.push("(");
+                        stack.Push("(");
                     }
 
                     if (expression[i] + string.Empty == ")")
                     {
-                        stack.pop();
+                        stack.Pop();
                     }
                 }
 

@@ -6,8 +6,6 @@
 namespace DataStructure.Utility
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// Queue as a class
@@ -15,14 +13,14 @@ namespace DataStructure.Utility
     public class Queue
     {
         /// <summary>
-        /// front, rear and size are fields
-        /// </summary>
-        private int front, rear, size = 0;
-
-        /// <summary>
         /// limit of queue
         /// </summary>
-        private static int limit = 100;
+        private static int limit = 1000;
+
+        /// <summary>
+        /// front, rear and size are fields
+        /// </summary>
+        private int front, rear, size = 0;        
 
         /// <summary>
         /// create array
@@ -37,21 +35,22 @@ namespace DataStructure.Utility
         {
             if (!this.IsFull())
             {
-                queue[rear] = data;
-                rear = (rear + 1) % limit;
-                size++;
+                this.queue[this.rear] = data;
+                this.rear = (this.rear + 1) % limit;
+                this.size++;
             }            
         }
 
         /// <summary>
         /// Function to show or print the data in queue
         /// </summary>
-        public void show()
+        public void Show()
         {
-            for(int i = 0; i < size; i++)
+            for (int i = 0; i < this.size; i++)
             {
-                Console.Write(queue[(i + front)% limit] +" ");
+                Console.Write(this.queue[(i + this.front) % limit] + " ");
             }
+
             Console.WriteLine();
         }
 
@@ -62,9 +61,9 @@ namespace DataStructure.Utility
         {
             if (!this.IsEmpty())
             {
-            size--;
-            Object value = queue[front];
-            front = (front + 1) % limit;            
+            this.size--;
+            object value = this.queue[this.front];
+            this.front = (this.front + 1) % limit;            
             }
         }
 
@@ -74,7 +73,7 @@ namespace DataStructure.Utility
         /// <returns>returns the size of queue</returns>
         public int Size()
         {
-            return size;
+            return this.size;
         }
 
         /// <summary>
@@ -99,9 +98,9 @@ namespace DataStructure.Utility
         /// Function to get the data at front
         /// </summary>
         /// <returns>returns data ta the front</returns>
-        public Object Get()
+        public object Get()
         {
-            return queue[front % limit];
+            return this.queue[this.front % limit];
         }
     }
 }

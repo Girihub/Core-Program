@@ -13,54 +13,66 @@ namespace DataStructure.Utility
     /// Stack as a class
     /// </summary>
     public class Stack
-    {
-        int top = -1;
-        static int limit = 1000;
-        Object[] stack = new Object[limit];
+    {     
+        /// <summary>
+        /// set limit of stack
+        /// </summary>
+        private static int limit = 1000;
+
+        /// <summary>
+        /// initialize top with -1
+        /// </summary>
+        private int top = -1;
+
+        /// <summary>
+        /// create array
+        /// </summary>
+        private object[] stack = new object[limit];
 
         /// <summary>
         /// Function to add the data in stack
         /// </summary>
         /// <param name="data">data, to be added, as a parameter</param>
-        public void push(Object data)
+        public void Push(object data)
         {
-            if (top >= limit - 1)
+            if (this.top >= limit - 1)
             {
                 Console.WriteLine("Stack Overflow");
             }
             else
             {
-                top = top + 1;
-                stack[top] = data;
+                this.top = this.top + 1;
+                this.stack[this.top] = data;
             }
         }
 
         /// <summary>
         /// Function to delete data from the stack
         /// </summary>
-        public void pop()
+        public void Pop()
         {
-            if (top < 0)
+            if (this.top < 0)
             {
                 Console.WriteLine("Stack underflow");
             }
             else
-            {                
-                top--;
+            {
+                this.top--;
             }
         }
 
         /// <summary>
         /// Function to get the data at the top of the stack
         /// </summary>
-        public void peek()
+        public void Peek()
         {
-            if (top < 0)
+            if (this.top < 0)
             {
                 Console.WriteLine("Stack underflow");
                 return;
             }
-            Console.WriteLine(stack[top]);
+
+            Console.WriteLine(this.stack[this.top]);
             return;
         }
 
@@ -70,23 +82,23 @@ namespace DataStructure.Utility
         /// <returns>Returns true if the stack is empty</returns>
         public bool IsEmpty()
         {
-            return top < 0;
+            return this.top < 0;
         }
 
         /// <summary>
         /// Function to print the elements in the stack
         /// </summary>
-        public void print()
+        public void Print()
         {
-            if (top < 0)
+            if (this.top < 0)
             {
                 Console.WriteLine("Stack underflow");
             }
             else
             {
-                for (int i = top; i >= 0; i--)
+                for (int i = this.top; i >= 0; i--)
                 {
-                    Console.Write(stack[i] + " ");
+                    Console.Write(this.stack[i] + " ");
                 }
             }
         }
@@ -95,9 +107,9 @@ namespace DataStructure.Utility
         /// Function to return the size of the stack
         /// </summary>
         /// <returns>returns the size of the stack</returns>
-        public int size()
+        public int Size()
         {
-            return top + 1;
+            return this.top + 1;
         }
     }
 }

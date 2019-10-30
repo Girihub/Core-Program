@@ -32,7 +32,7 @@ namespace DataStructure
                         {
                             if (utility.IsAnagram(i + string.Empty, j + string.Empty) && utility.IsPrime(j))
                             {
-                                stack.push(j);
+                                stack.Push(j);
                                 Console.WriteLine(i + " " + j);
                             }
                         }

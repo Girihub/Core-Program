@@ -30,13 +30,13 @@ namespace DataStructure
                 Console.WriteLine("Enter names of people");
                 for (int i = 0; i < numberOfPeople; i++)
                 {
-                    peopleInQueue.enqueue(Console.ReadLine());
+                    peopleInQueue.Enqueue(Console.ReadLine());
                 } 
                 
                 while (!peopleInQueue.IsEmpty())
                 {
-                    peopleInQueue.show();                  
-                    Console.WriteLine("Welcome to our bank " + peopleInQueue.get());
+                    peopleInQueue.Show();                  
+                    Console.WriteLine("Welcome to our bank " + peopleInQueue.Get());
                     Console.WriteLine("1: To withdraw money");
                     Console.WriteLine("2: To deposite money");
                     int choice = Convert.ToInt32(Console.ReadLine());
@@ -52,7 +52,7 @@ namespace DataStructure
                             }
 
                             bankBalance = bankBalance - amount;
-                            peopleInQueue.dequeue();
+                            peopleInQueue.Dequeue();
                             break;
 
                         case 2:
@@ -65,7 +65,7 @@ namespace DataStructure
                             }
 
                             bankBalance = bankBalance + cash;
-                            peopleInQueue.dequeue();
+                            peopleInQueue.Dequeue();
                             break;
 
                         default:

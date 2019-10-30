@@ -32,6 +32,7 @@ namespace DataStructure
                 Console.WriteLine("8: PrimeAnagram By Stack");
                 Console.WriteLine("9: PrimeAnagram By Queue");
                 Console.WriteLine("10: Calender");
+                Console.WriteLine("11: Calender By Queue");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -77,6 +78,10 @@ namespace DataStructure
 
                         case 10:
                             Calender.CalenderFunction();
+                            break;
+
+                        case 11:
+                            CalenderByQueue.DisplayCalender();
                             break;
 
                         case 0:

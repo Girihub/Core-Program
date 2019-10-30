@@ -14,43 +14,52 @@ namespace DataStructure.Utility
     /// </summary>
     public class StackUsingLinkedList
     {
-        Node head;
-        int top = -1;
+        /// <summary>
+        /// Node as head
+        /// </summary>
+        private Node head;
+
+        /// <summary>
+        /// initialize top with -1
+        /// </summary>
+        private int top = -1;
 
         /// <summary>
         /// Function to add the data in stack
         /// </summary>
         /// <param name="data">data, to be added, as a parameter</param>
-        public void push(Object data)
+        public void Push(object data)
         {
             Node node = new Node();
             node.data = data;
-            if (head == null)
+            if (this.head == null)
             {
-                head = node;
+                this.head = node;
                 node.next = null;
             }
             else
             {
-                Node tempNode = head;
-                head = node;
+                Node tempNode = this.head;
+                this.head = node;
                 node.next = tempNode;
             }
-            top++;
+
+            this.top++;
         }
 
         /// <summary>
         /// Function to delete data from the stack
         /// </summary>
-        public void pop()
+        public void Pop()
         {
-            if (top < 0)
+            if (this.top < 0)
             {
                 Console.WriteLine("Stack underflow");
                 return;
             }
-            head = head.next;
-            top--;
+
+            this.head = this.head.next;
+            this.top--;
         }
 
         /// <summary>
@@ -59,20 +68,21 @@ namespace DataStructure.Utility
         /// <returns>Returns true if the stack is empty</returns>
         public bool IsEmpty()
         {
-            return top < 0;
+            return this.top < 0;
         }
 
         /// <summary>
         /// Function to print the elements in the stack
         /// </summary>
-        public void print()
+        public void Print()
         {
-            if (top < 0)
+            if (this.top < 0)
             {
                 Console.WriteLine("Stack is empty");
                 return;
             }
-            Node tempNode = head;
+
+            Node tempNode = this.head;
             while (tempNode != null)
             {
                 Console.Write(tempNode.data + " ");
@@ -86,7 +96,7 @@ namespace DataStructure.Utility
         /// <returns>Returns the size of the stack</returns>
         public int Size()
         {
-            return top + 1;
+            return this.top + 1;
         }        
     }
 }

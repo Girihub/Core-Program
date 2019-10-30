@@ -14,76 +14,88 @@ namespace DataStructure.Utility
     /// </summary>
     public class QueueUsingLinkedList
     {
-        Node head;
-        int size = 0;
+        /// <summary>
+        /// Node as head
+        /// </summary>
+        private Node head;
+
+        /// <summary>
+        /// initialize size
+        /// </summary>
+        private int size = 0;
 
         /// <summary>
         /// Function to check if queue is empty
         /// </summary>
-        /// <returns>returns true if th queue is empty</returns>
+        /// <returns>returns true if the queue is empty</returns>
         public bool IsEmpty()
         {
-            return size==0;
+            return this.size == 0;
         }
 
         /// <summary>
         /// Function to add the data in queue
         /// </summary>
         /// <param name="data">data, to be added, as a parameter</param>
-        public void enqueue(Object data)
+        public void Enqueue(object data)
         {
             Node node = new Node();
             node.data = data;
             node.next = null;
-            if (head == null)
+            if (this.head == null)
             {
-                head = node;                                
+                this.head = node;                                
             }
             else
             {
-                Node tempNode = head;
+                Node tempNode = this.head;
                 while (tempNode.next != null)
                 {
                     tempNode = tempNode.next;
                 }
+
                 tempNode.next = node;
             }
-            size++;
+
+            this.size++;
         }
 
         /// <summary>
         /// Function to remove data from queue
         /// </summary>
-        public void dequeue()
+        public void Dequeue()
         {
-            if (head == null)
+            if (this.head == null)
             {
                 Console.WriteLine("Queue is already empty");
                 return;
             }
             else 
             {
-                head = head.next;                
+                this.head = this.head.next;                
             }
-            size--;
+
+            this.size--;
         }
 
         /// <summary>
         /// Function to print or show data in queue
         /// </summary>
-        public void show()
+        public void Show()
         {
-            if (head == null)
+            if (this.head == null)
             {
                 Console.WriteLine("Queue is empty");
             }
             else
             {
-                Node tempNode = head;
-                while (tempNode != null){
+                Node tempNode = this.head;
+                while (tempNode != null)
+                {
                     Console.Write(tempNode.data + " ");
                     tempNode = tempNode.next;
                 }
+
                 Console.WriteLine();
             }
         }
@@ -94,17 +106,16 @@ namespace DataStructure.Utility
         /// <returns>returns total no. of elements in queue</returns>
         public int Size()
         {
-            return size;
+            return this.size;
         }
 
         /// <summary>
         /// Function to get the data in the front queue
         /// </summary>
         /// <returns>returns data in the front from queue</returns>
-        public Object get()
+        public object Get()
         {
-            return head.data;
-        }
-        
+            return this.head.data;
+        }        
     }
 }

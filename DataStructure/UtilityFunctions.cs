@@ -151,6 +151,13 @@ namespace DataStructure
             return true;
         }
 
+        /// <summary>
+        /// Function to return day of week
+        /// </summary>
+        /// <param name="d">day as a parameter</param>
+        /// <param name="m">month as a parameter</param>
+        /// <param name="y">year as a parameter</param>
+        /// <returns>return day number</returns>
         public int DayOfweek(int d, int m, int y)
         {
             double y0 = y - Math.Floor((double)(14 - m) / 12);
@@ -160,6 +167,11 @@ namespace DataStructure
             return (int)d0;
         }
 
+        /// <summary>
+        /// Function to check if given year is leap
+        /// </summary>
+        /// <param name="year">year as a parameter</param>
+        /// <returns>returns true if year is leap</returns>
         public bool Leap(int year)
         {
             if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
@@ -170,24 +182,34 @@ namespace DataStructure
             return false;
         }
 
+        /// <summary>
+        /// Function to return end date of month
+        /// </summary>
+        /// <param name="month">month as a parameter</param>
+        /// <param name="year">year as a parameter</param>
+        /// <returns>returns end date of month</returns>
         public int EndDate(int month, int year)
         {
             if (month == 2 && this.Leap(year))
             {
                 return 29;
             }
+
             if (month == 2)
             {
                 return 28;
             }
+
             if (month % 2 == 0 && month < 8)
             {
                 return 30;
             }
-            if(month % 2 != 0 && month > 8)
+
+            if (month % 2 != 0 && month > 8)
             {
                 return 30;
             }
+
             return 31;
         }
     }    
