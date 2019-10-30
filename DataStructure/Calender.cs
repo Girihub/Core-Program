@@ -36,30 +36,32 @@ namespace DataStructure
                 {
                     Console.Write(days[i] + "  ");
                 }
-                Console.WriteLine();
+                Console.WriteLine();                
                 int j = 1;
-                int count = 0;
-                for(int i = 1; i <= endDate; i++)
+                for(int i = 1; i < endDate+start; i++)
                 {
-                    while (count != start)
+                    if (i < start)
                     {
-                        Console.Write("  ");
-                        count++;
-                    }
-                    if((j + string.Empty).Length < 2)
-                    {
-                        Console.Write(j + "  ");
+                        Console.Write("   ");
                     }
                     else
                     {
-                        Console.Write(j + " ");
-                    }                    
-                    if((j + count - 1) % 7 == 0)
+                        if (j < 9)
+                        {
+                            Console.Write(j + "  ");
+                        }
+                        else
+                        {
+                            Console.Write(j + " ");
+                        }
+                        j++;
+                    }
+                    if (i % 7 == 0)
                     {
                         Console.WriteLine();
                     }
-                    j++;
                 }
+                
 
                 Console.WriteLine();
             }
