@@ -31,7 +31,8 @@ namespace DataStructure
                 for (int i = 0; i < numberOfPeople; i++)
                 {
                     peopleInQueue.enqueue(Console.ReadLine());
-                }                
+                } 
+                
                 while (!peopleInQueue.IsEmpty())
                 {
                     peopleInQueue.show();                  
@@ -44,11 +45,12 @@ namespace DataStructure
                         case 1:
                             Console.WriteLine("Enter money to withdraw");
                             int amount = Convert.ToInt32(Console.ReadLine());
-                            while(amount>bankBalance && amount > withdrawLimit)
+                            while (amount > bankBalance && amount > withdrawLimit)
                             {
-                                Console.WriteLine("Withdraw limit is "+ withdrawLimit);
+                                Console.WriteLine("Withdraw limit is " + withdrawLimit);
                                 amount = Convert.ToInt32(Console.ReadLine());
                             }
+
                             bankBalance = bankBalance - amount;
                             peopleInQueue.dequeue();
                             break;
@@ -61,6 +63,7 @@ namespace DataStructure
                                 Console.WriteLine("Deposit amount should be atleast 1");
                                 cash = Convert.ToInt32(Console.ReadLine());
                             }
+
                             bankBalance = bankBalance + cash;
                             peopleInQueue.dequeue();
                             break;
@@ -69,13 +72,9 @@ namespace DataStructure
                             Console.WriteLine("Enter valid choice");
                             break;
                     }
+
                     Console.WriteLine("Bank balance " + bankBalance);
                 }
-                
-                
-
-
-
             }        
             catch (Exception e)
             {

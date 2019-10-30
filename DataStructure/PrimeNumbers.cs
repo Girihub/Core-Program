@@ -32,6 +32,7 @@ namespace DataStructure
                         count++;
                     }
                 }
+
                 int[,] array = new int[10, 1000];
                 int min = 0, max = 100, k = 0;
                 for (int i = 0; i < 10; i++)
@@ -51,6 +52,7 @@ namespace DataStructure
                         }
                     }
                 }
+
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 100; j++)
@@ -60,8 +62,10 @@ namespace DataStructure
                             Console.Write(array[i, j] + " ");
                         }
                     }
+
                     Console.WriteLine();
                 }
+
                 Console.WriteLine();
             }
             catch (Exception e)

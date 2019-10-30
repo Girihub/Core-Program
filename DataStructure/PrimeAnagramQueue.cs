@@ -29,7 +29,7 @@ namespace DataStructure
                 {
                     for (int j = i + 1; j <= 1000; j++)
                     {
-                        if (utility.IsAnagram(i + "", j + "") && utility.IsPrime(i) && utility.IsPrime(j))
+                        if (utility.IsAnagram(i + string.Empty, j + string.Empty) && utility.IsPrime(i) && utility.IsPrime(j))
                         {
                             queue.enqueue(j);
                         }

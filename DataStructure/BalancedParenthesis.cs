@@ -31,17 +31,20 @@ namespace DataStructure
                     Console.WriteLine("Enter valid arithmatic expression");
                     expression = Console.ReadLine();
                 }
-                for(int i = 0; i < expression.Length; i++)
+
+                for (int i = 0; i < expression.Length; i++)
                 {
-                    if (expression[i]+"" == "(")
+                    if (expression[i] + string.Empty == "(")
                     {
                         stack.push("(");
                     }
-                    if (expression[i] + "" == ")")
+
+                    if (expression[i] + string.Empty == ")")
                     {
                         stack.pop();
                     }
                 }
+
                 if (stack.IsEmpty())
                 {
                     Console.WriteLine("Arithmatic expression is balanced");
@@ -50,6 +53,7 @@ namespace DataStructure
                 {
                     Console.WriteLine("Arithmatic expression is not balanced");
                 }
+
                 Console.WriteLine();
             }
             catch (Exception e)

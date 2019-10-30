@@ -14,24 +14,28 @@ namespace DataStructure.Utility
     /// </summary>
     public class Deque
     {
-        Node head;
+        /// <summary>
+        /// Assume node as a head
+        /// </summary>
+        private Node head;
+        
         /// <summary>
         /// Function to add data to the front
         /// </summary>
         /// <param name="data">data as a parameter</param>
-        public void AddFront(Object data)
+        public void AddFront(object data)
         {
             Node node = new Node();
             node.data = data;
-            if (head == null)
+            if (this.head == null)
             {
-                head = node;
+                this.head = node;
                 node.next = null;
             }
             else
             {
-                Node tempNode = head;
-                head = node;
+                Node tempNode = this.head;
+                this.head = node;
                 node.next = tempNode;
             }
         }
@@ -40,22 +44,23 @@ namespace DataStructure.Utility
         /// Function to add data to the rear
         /// </summary>
         /// <param name="data">data as a parameter</param>
-        public void AddRear(Object data)
+        public void AddRear(object data)
         {
             Node node = new Node();
             node.data = data;
             node.next = null;
-            if (head == null)
+            if (this.head == null)
             {
-                head = node;                
+                this.head = node;                
             }
             else
             {
-                Node tempNode = head;
+                Node tempNode = this.head;
                 while (tempNode.next != null)
                 {
                     tempNode = tempNode.next;
                 }
+
                 tempNode.next = node;
             }
         }
@@ -64,16 +69,16 @@ namespace DataStructure.Utility
         /// Function to remove data from the front
         /// </summary>
         /// <returns>Returns removed data</returns>
-        public Object RemoveFront()
+        public object RemoveFront()
         {
-            if (head == null)
+            if (this.head == null)
             {
                 return null;
             }
             else
             {
-                Node tempNode = head;
-                head = head.next;
+                Node tempNode = this.head;
+                this.head = this.head.next;
                 return tempNode.data;
             }
         }
@@ -82,25 +87,26 @@ namespace DataStructure.Utility
         /// Function to remove data at the rear
         /// </summary>
         /// <returns>Returns removed data</returns>
-        public Object RemoveRear()
+        public object RemoveRear()
         {
-            if (head == null)
+            if (this.head == null)
             {
                 return null;
             }
-            else if(head.next==null)
+            else if (this.head.next == null)
             {
-                Node tempNode = head;
-                head = null;
+                Node tempNode = this.head;
+                this.head = null;
                 return tempNode.data;
             }
             else
             {
-                Node tempNode = head;
+                Node tempNode = this.head;
                 while (tempNode.next.next != null)
                 {
                     tempNode = tempNode.next;
                 }
+
                 Node tempNode1 = tempNode;
                 tempNode.next = null;
                 return tempNode1.data;
@@ -108,35 +114,36 @@ namespace DataStructure.Utility
         }
 
         /// <summary>
-        /// Function to count size of deque
+        /// Function to count size
         /// </summary>
-        /// <returns>Returns size of deque</returns>
+        /// <returns>Returns size</returns>
         public int Size()
         {
             int count = 0;
-            if (head == null)
+            if (this.head == null)
             {
                 return count;
             }
             else
             {
-                Node node = head;
+                Node node = this.head;
                 while (node != null)
                 {
                     count++;
                     node = node.next;
                 }
+
                 return count;
             }
         }
 
         /// <summary>
-        /// Function to check if deque is empty
+        /// Function to check if queue is empty
         /// </summary>
         /// <returns>Returns true if empty. False otherwise</returns>
         public bool IsEmpty()
         {
-            return Size() == 0;
+            return this.Size() == 0;
         }
     }
 }

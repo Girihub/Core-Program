@@ -28,35 +28,37 @@ namespace DataStructure
                 string[] values = file.Split(',');
                 for (int i = 0; i < values.Length; i++)
                 {
-                    list.append(Convert.ToInt32(values[i]));
+                    list.Append(Convert.ToInt32(values[i]));
                 }
-                for (int i = 0; i < list.size(); i++)
+
+                for (int i = 0; i < list.Size(); i++)
                 {
-                    for (int j = 0; j < list.size() - 1; j++)
+                    for (int j = 0; j < list.Size() - 1; j++)
                     {
-                        if (Convert.ToInt32(list.get(j)) > Convert.ToInt32(list.get(j + 1)))
+                        if (Convert.ToInt32(list.Get(j)) > Convert.ToInt32(list.Get(j + 1)))
                         {
-                            int temp = Convert.ToInt32(list.get(j));
-                            list.put(j, list.get(j + 1));
-                            list.put(j + 1, temp);
+                            int temp = Convert.ToInt32(list.Get(j));
+                            list.Put(j, list.Get(j + 1));
+                            list.Put(j + 1, temp);
                         }
                     }
                 }
-                list.show();
+
+                list.Show();
                 Console.WriteLine("Enter any number");
                 int input = Convert.ToInt32(Console.ReadLine());
-                if (list.search(input))
+                if (list.Search(input))
                 {
-                    list.remove(input);
+                    list.Remove(input);
                 }
                 else
                 {
-                    list.addOrder(input);
+                    list.AddOrder(input);
                 }
-                list.show();
+
+                list.Show();
                 Console.WriteLine();
             }
-
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);

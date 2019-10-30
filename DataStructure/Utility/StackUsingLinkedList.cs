@@ -17,6 +17,10 @@ namespace DataStructure.Utility
         Node head;
         int top = -1;
 
+        /// <summary>
+        /// Function to add the data in stack
+        /// </summary>
+        /// <param name="data">data, to be added, as a parameter</param>
         public void push(Object data)
         {
             Node node = new Node();
@@ -35,6 +39,9 @@ namespace DataStructure.Utility
             top++;
         }
 
+        /// <summary>
+        /// Function to delete data from the stack
+        /// </summary>
         public void pop()
         {
             if (top < 0)
@@ -46,11 +53,18 @@ namespace DataStructure.Utility
             top--;
         }
 
+        /// <summary>
+        /// Function to check if the stack is empty
+        /// </summary>
+        /// <returns>Returns true if the stack is empty</returns>
         public bool IsEmpty()
         {
             return top < 0;
         }
 
+        /// <summary>
+        /// Function to print the elements in the stack
+        /// </summary>
         public void print()
         {
             if (top < 0)
@@ -66,6 +80,10 @@ namespace DataStructure.Utility
             }
         }
 
+        /// <summary>
+        /// Function to return the size of the stack
+        /// </summary>
+        /// <returns>Returns the size of the stack</returns>
         public int Size()
         {
             return top + 1;

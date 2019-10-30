@@ -35,8 +35,7 @@ namespace DataStructure
 
                 ////Read the numbers from file and display////
                 string path = @"C:\Users\admin\source\Bridge\DataStructure\DataStructure\HashNumbers.txt";
-                utility.DispalyHash(hash,path);
-
+                utility.DispalyHash(hash, path);
                 
                 ////Take user input to search it in hash////
                 Console.WriteLine("Enter number to be searched");
@@ -58,13 +57,13 @@ namespace DataStructure
                     Console.WriteLine(searchInput + " is not present. So it is going to be addded");
                     utility.InsertInFile(searchInput, hash, path);
                 }
+
                 utility.DispalyHash(hash, path);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-            }
-           
+            }           
         }
     }
 }

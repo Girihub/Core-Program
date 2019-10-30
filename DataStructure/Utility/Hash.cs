@@ -14,43 +14,54 @@ namespace DataStructure.Utility
     /// Hash as a class implemented by linked list
     /// </summary>
     public class Hash
-    {         
+    {
+        /// <summary>
+        /// index as an integer
+        /// </summary>
         private int index;
-        private LinkedList linkedList;
-        int len = 0;
 
         /// <summary>
-        /// Hash constructor
+        /// linkedList to create new Linked List
+        /// </summary>
+        private LinkedList linkedList;
+
+        /// <summary>
+        /// integer len to measure length of hash
+        /// </summary>
+        private int len = 0;
+
+        /// <summary>
+        /// Initialize the new instance of Hash
         /// </summary>
         /// <param name="index">index as a parameter</param>
         public Hash(int index)
         {
             this.index = index;
             this.linkedList = new LinkedList();
-            len++;
+            this.len++;
         }    
         
         /// <summary>
         /// Function to add the data
         /// </summary>
         /// <param name="data">data as a parameter</param>
-        public void add(Object data)
+        public void Add(object data)
         {            
-            this.linkedList.append(data);
+            this.linkedList.Append(data);
             this.linkedList.OrederLinkedList();             
         }
 
         /// <summary>
         /// Function to show or print the data
         /// </summary>
-        public void show()
+        public void Show()
         {
-            for(int i = 0; i < this.len; i++)
+            for (int i = 0; i < this.len; i++)
             {
-                if (this.linkedList.get(i) != null)
+                if (this.linkedList.Get(i) != null)
                 {
                     Console.Write(this.index + " : ");
-                    this.linkedList.show();
+                    this.linkedList.Show();
                     Console.WriteLine();
                 }
             }            
@@ -61,26 +72,26 @@ namespace DataStructure.Utility
         /// </summary>
         /// <param name="input">data, to be searched, as a parameter</param>
         /// <returns>returns true if data if present</returns>
-        public bool Search(Object input)
+        public bool Search(object input)
         {
-            for(int j = 0; j < this.linkedList.size(); j++)
+            for (int j = 0; j < this.linkedList.Size(); j++)
                 {
-                    if (this.linkedList.search(input)==true)
+                    if (this.linkedList.Search(input) == true)
                     {
                         return true;
                     }
                 }
+
             return false;
         }
 
         /// <summary>
         /// Function to remove data
         /// </summary>
-        /// <param name="data"></param>
-        public void Remove(Object data)
+        /// <param name="data">data as a parameter</param>
+        public void Remove(object data)
         {
-            this.linkedList.remove(data);
+            this.linkedList.Remove(data);
         }
-
     }
 }

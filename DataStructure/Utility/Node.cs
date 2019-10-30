@@ -14,8 +14,19 @@ namespace DataStructure.Utility
     /// </summary>
     public class Node
     {
+        /// <summary>
+        /// next as a Node
+        /// </summary>
         public Node next;
+
+        /// <summary>
+        /// prev as a Node
+        /// </summary>
         public Node prev;
-        public Object data;
+
+        /// <summary>
+        /// data as a field
+        /// </summary>
+        public object data;
     }
 }

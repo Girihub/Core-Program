@@ -1,5 +1,5 @@
 ﻿//----------------------------------------------------
-// <copyright file="Program.cs" company="Bridgelabz">
+// <copyright file="UnOrderedList.cs" company="Bridgelabz">
 // Company copyright tag.
 // </copyright>
 //----------------------------------------------------
@@ -31,31 +31,33 @@ namespace DataStructure
                     string[] word = line.Split(' ');
                     for (int i = 0; i < word.Length; i++)
                     {
-                        list.append(word[i]);
+                        list.Append(word[i]);
                     }
                 }
-                list.show();
+
+                list.Show();
                 string end = file.ReadToEnd();
                 file.Close();
                 Console.WriteLine();
                 Console.WriteLine("Enter word to find");
                 string find = Console.ReadLine();
                 string changeFile = File.ReadAllText(@"C:\Users\admin\source\Bridge\DataStructure\DataStructure\File.txt", Encoding.UTF8);
-                if (list.search(find))
+                if (list.Search(find))
                 {
-                    list.remove(find);
-                    changeFile = changeFile.Replace(find, "");
+                    list.Remove(find);
+                    changeFile = changeFile.Replace(find, string.Empty);
                     File.WriteAllText(@"C:\Users\admin\source\Bridge\DataStructure\DataStructure\File.txt", changeFile);
                 }
                 else
                 {
-                    list.append(find);
+                    list.Append(find);
                     using (StreamWriter sw = File.AppendText(@"C:\Users\admin\source\Bridge\DataStructure\DataStructure\File.txt"))
                     {
                         sw.WriteLine(find);                        
                     }
                 }
-                list.show();
+
+                list.Show();
                 Console.WriteLine();
             }
             catch (Exception e)

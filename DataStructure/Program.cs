@@ -1,11 +1,23 @@
-﻿using System;
-using System.Text.RegularExpressions;
-
+﻿//----------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 namespace DataStructure
 {
+    using System;
+    using System.Text.RegularExpressions;
+
+    /// <summary>
+    /// Program as a class name
+    /// </summary>
     public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// main function
+        /// </summary>
+        /// <param name="args">args as a parameter</param>
+        public static void Main(string[] args)
         {
             bool exit = false;
             while (!exit)
@@ -19,6 +31,7 @@ namespace DataStructure
                 Console.WriteLine("7: PrimeNumbers");
                 Console.WriteLine("8: PrimeAnagram By Stack");
                 Console.WriteLine("9: PrimeAnagram By Queue");
+                Console.WriteLine("10: Calender");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -62,8 +75,12 @@ namespace DataStructure
                             PrimeAnagramQueue.PrimeAndAnagram();
                             break;
 
+                        case 10:
+                            Calender.CalenderFunction();
+                            break;
+
                         case 0:
-                            exit = true; ;
+                            exit = true;
                             break;
 
                         default:

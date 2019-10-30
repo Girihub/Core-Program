@@ -30,7 +30,7 @@ namespace DataStructure
                     {
                         for (int j = i + 1; j <= 1000 - 1; j++)
                         {
-                            if (utility.IsAnagram(i + "", j + "") && utility.IsPrime(j))
+                            if (utility.IsAnagram(i + string.Empty, j + string.Empty) && utility.IsPrime(j))
                             {
                                 stack.push(j);
                                 Console.WriteLine(i + " " + j);
