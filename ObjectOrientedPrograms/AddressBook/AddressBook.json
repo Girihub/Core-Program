@@ -1,0 +1,38 @@
+﻿[
+  {
+    "firstname": "Giridhar",
+    "lastname": "D",
+    "address": "Near High School, Velgoor",
+    "city": "Amravati",
+    "state": "Maharashtra",
+    "zip": 444701,
+    "mobile": "8208599710"
+  },
+  {
+    "firstname": "Vishal",
+    "lastname": "B",
+    "address": "Near Farm",
+    "city": "Akola",
+    "state": "Maharashtra",
+    "zip": 440564,
+    "mobile": "9871253904"
+  },
+  {
+    "firstname": "Shekhar",
+    "lastname": "B",
+    "address": "Near Highway",
+    "city": "Washim",
+    "state": "Maharashtra",
+    "zip": 444776,
+    "mobile": "8977654521"
+  },
+  {
+    "firstname": "Chetan",
+    "lastname": "V",
+    "address": "Near Bakery",
+    "city": "Dhule",
+    "state": "Maharashtra",
+    "zip": 444603,
+    "mobile": "9923155879"
+  }
+]
