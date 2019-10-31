@@ -23,7 +23,8 @@ namespace ObjectOrientedPrograms
             while (!exit)
             {
                 Console.WriteLine();
-                Console.WriteLine("1: AddressBook");                
+                Console.WriteLine("1: AddressBook");
+                Console.WriteLine("2: InventoryDataManagement");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -33,7 +34,11 @@ namespace ObjectOrientedPrograms
                     {
                         case 1:
                             AddressBook.AddressBook.AddressBookFunction();
-                            break;                        
+                            break;
+
+                        case 2:
+                            InventoryDataManagement.InventoryDataManagement.InventoryDataManagementFunction();
+                            break;
 
                         case 0:
                             exit = true;
