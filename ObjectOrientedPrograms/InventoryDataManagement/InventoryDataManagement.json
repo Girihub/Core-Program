@@ -1,0 +1,38 @@
+﻿{
+  "Rice": [
+    {
+      "name": "Basmati",
+      "weight": 500,
+      "pricePerKg": 40
+    },
+    {
+      "name": "Brown",
+      "weight": 600,
+      "pricePerKg": 55
+    }
+  ],
+  "Pulses": [
+    {
+      "name": "Chick Peas",
+      "weight": 150,
+      "pricePerKg": 250
+    },
+    {
+      "name": "Broad Beans",
+      "weight": 200,
+      "pricePerKg": 300
+    }
+  ],
+  "Wheats": [
+    {
+      "name": "Barley",
+      "weight": 400,
+      "pricePerKg": 35
+    },
+    {
+      "name": "Cereal",
+      "weight": 450,
+      "pricePerKg": 30
+    }
+  ]
+}
