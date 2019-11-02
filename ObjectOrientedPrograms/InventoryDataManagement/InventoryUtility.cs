@@ -1,16 +1,18 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace ObjectOrientedPrograms.InventoryDataManagement
 {
     public class InventoryUtility
     {
+        string path = @"C:\Users\admin\source\Bridge\ObjectOrientedPrograms\ObjectOrientedPrograms\InventoryDataManagement\InventoryDataManagement.json";
         public InventoryList List()
-        {
-            string path = @"C:\Users\admin\source\Bridge\ObjectOrientedPrograms\ObjectOrientedPrograms\InventoryDataManagement\InventoryDataManagement.json";
+        {            
             //// read file into a string and deserialize JSON to a type
             InventoryList inventory = JsonConvert.DeserializeObject<InventoryList>(File.ReadAllText(path));
             //// deserialize JSON directly from a file
@@ -50,74 +52,87 @@ namespace ObjectOrientedPrograms.InventoryDataManagement
                     totalWheat += item.Weight;
                     Console.WriteLine(item.Name + "\t\t" + item.Weight + "kg \t\t" + item.PricePerKg);
                 }
-                Console.Write("---------------------------------\nTotal   \t" + totalWheat);
-            
+                Console.Write("---------------------------------\nTotal   \t" + totalWheat);            
         }
 
-        public void AddRice()
+        public void AddItem(string item)
         {
-            InventoryData data = new InventoryData();
-            Console.WriteLine("Name of rice");
-            data.Name = Console.ReadLine();
-            Console.WriteLine("Weight of rice");
-            data.Weight = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Price of rice per Kg");
-            data.PricePerKg = Convert.ToInt32(Console.ReadLine());
-            var list = this.List();
-            foreach(var item in list.Rice)
+            Console.WriteLine("Enter " + item + " name");
+            var name = Console.ReadLine();
+            Console.WriteLine("Enter " + item + " weight");
+            var weight = Console.ReadLine();
+            Console.WriteLine("Price per 1 kg of " + item);
+            var pricePerKg = Console.ReadLine();
+            var newRice = "{'name': '" + name + "' ,'weight':" + weight + ",'pricePerKg':" + pricePerKg + "}";
+            try
             {
-                Console.WriteLine(item.Name);
+                var json = File.ReadAllText(path);
+                var jsonObj = JObject.Parse(json);
+                var riceArrary = jsonObj.GetValue(item) as JArray;
+                var newInventory = JObject.Parse(newRice);
+                riceArrary.Add(newInventory);
+                jsonObj[item] = riceArrary;
+                string newJsonResult = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+                File.WriteAllText(path, newJsonResult);
             }
-            list.Rice.Add(data);
-            foreach (var item in list.Rice)
+            catch (Exception e)
             {
-                Console.WriteLine(item.Name);
+                Console.WriteLine(e.Message);
             }
-
-
         }
 
-        
-
-        public void AddWheat()
+        public void DeleteItem(string item)
         {
-
+            var json = File.ReadAllText(path);            
+            Console.WriteLine("Enter the " + item + " type you want to delete");
+            string itemType = Console.ReadLine();
+            var jObject = JObject.Parse(json);
+            JArray itemArrary = (JArray)jObject[item];
+            bool found = false;
+                foreach (var x in jObject[item])
+                {
+                    if (x["name"] + string.Empty == itemType)
+                    {
+                        var itemToDelete = itemArrary.FirstOrDefault(obj => obj["name"].Value<string>() == itemType);
+                        itemArrary.Remove(itemToDelete);
+                        jObject[item] = itemArrary;
+                        string output = Newtonsoft.Json.JsonConvert.SerializeObject(jObject, Newtonsoft.Json.Formatting.Indented);
+                        File.WriteAllText(path, output);
+                        found = true;
+                        return;
+                    }                                        
+                }
+            if (!found)
+            {
+                Console.WriteLine("File not found");
+            }
         }
 
-        public void AddPulse()
+        public void EditItem(string item)
         {
-
+            var json = File.ReadAllText(path);
+            Console.WriteLine("Enter the " + item +" type you want to edit");
+            string itemType = Console.ReadLine();
+            var jObject = JObject.Parse(json);
+            JArray itemArrary = (JArray)jObject[item];
+            bool found = false;
+            foreach (var updateItems in itemArrary.Where(obj => obj["name"].Value<string>() == itemType))
+            {
+                Console.WriteLine("Enter new name");
+                updateItems["name"] = Console.ReadLine();
+                Console.WriteLine("Enter new weight");
+                updateItems["weight"] = Console.ReadLine();
+                Console.WriteLine("Enter new price per kg");
+                updateItems["pricePerKg"] = Console.ReadLine();
+                found = true;
+            }
+            jObject[item] = itemArrary;
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(jObject, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(path, output);            
+            if (!found)
+            {
+                Console.WriteLine("File not found");
+            }
         }
-
-        public void DeleteRice()
-        {
-
-        }
-
-        public void DeleteWheat()
-        {
-
-        }
-
-        public void DeletePulse()
-        {
-
-        }
-
-        public void EditRice()
-        {
-
-        }
-
-        public void EditWheat()
-        {
-
-        }
-
-        public void EditPulse()
-        {
-
-        }
-        
     }
 }

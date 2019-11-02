@@ -1,4 +1,4 @@
-﻿{
+{
   "Rice": [
     {
       "name": "Basmati",
@@ -9,6 +9,16 @@
       "name": "Brown",
       "weight": 600,
       "pricePerKg": 55
+    },
+    {
+      "name": "ddd",
+      "weight": "234",
+      "pricePerKg": "12"
+    },
+    {
+      "name": "qqq",
+      "weight": "23",
+      "pricePerKg": "1"
     }
   ],
   "Pulses": [
@@ -33,6 +43,11 @@
       "name": "Cereal",
       "weight": 450,
       "pricePerKg": 30
+    },
+    {
+      "name": "ddd",
+      "weight": 32,
+      "pricePerKg": 1
     }
   ]
 }

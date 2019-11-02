@@ -21,15 +21,15 @@ namespace ObjectOrientedPrograms.InventoryDataManagement
             switch (choice)
             {
                 case 1:
-                    utility.AddRice();
+                    utility.AddItem("Rice");
                     break;
 
                 case 2:
-                    utility.AddWheat();
+                    utility.AddItem("Wheats");
                     break;
 
                 case 3:
-                    utility.AddPulse();
+                    utility.AddItem("Pulses");
                     break;
 
                 default:
@@ -51,15 +51,15 @@ namespace ObjectOrientedPrograms.InventoryDataManagement
             switch (choice)
             {
                 case 1:
-                    utility.DeleteRice();
+                    utility.DeleteItem("Rice");
                     break;
 
                 case 2:
-                    utility.DeleteWheat();
+                    utility.DeleteItem("Wheats");
                     break;
 
                 case 3:
-                    utility.DeletePulse();
+                    utility.DeleteItem("Pulses");
                     break;
 
                 default:
@@ -81,7 +81,7 @@ namespace ObjectOrientedPrograms.InventoryDataManagement
             switch (choice)
             {
                 case 1:
-                    utility.EditRice();
+                    utility.EditItem("Rice");
                     break;
 
                 case 2:
@@ -89,7 +89,7 @@ namespace ObjectOrientedPrograms.InventoryDataManagement
                     break;
 
                 case 3:
-                    utility.EditPulse();
+                    //utility.EditPulse();
                     break;
 
                 default:
