@@ -85,11 +85,11 @@ namespace ObjectOrientedPrograms.InventoryDataManagement
                     break;
 
                 case 2:
-                    utility.EditWheat();
+                    utility.EditItem("Wheats");
                     break;
 
                 case 3:
-                    //utility.EditPulse();
+                    utility.EditItem("Pulses");
                     break;
 
                 default:

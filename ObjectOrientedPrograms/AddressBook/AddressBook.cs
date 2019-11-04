@@ -26,6 +26,7 @@ namespace ObjectOrientedPrograms.AddressBook
                         break;
 
                     case 2:
+                        utility.AddInfo();
                         break;
 
                     case 3:

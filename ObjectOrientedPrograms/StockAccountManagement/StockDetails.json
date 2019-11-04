@@ -1,0 +1,29 @@
+{
+  "Stocks": [
+    {
+      "stockName": "NYS Exchange",
+      "numberOfShares": 540,
+      "sharePrice": 1500
+    },
+    {
+      "stockName": "Axis Bank",
+      "numberOfShares": 160,
+      "sharePrice": 4300
+    },
+    {
+      "stockName": "Tata Services",
+      "numberOfShares": 466,
+      "sharePrice": 3390
+    },
+    {
+      "stockName": "asfg",
+      "numberOfShares": 13,
+      "sharePrice": 124
+    },
+    {
+      "stockName": "eh",
+      "numberOfShares": 1,
+      "sharePrice": 1
+    }
+  ]
+}

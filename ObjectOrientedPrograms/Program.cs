@@ -26,6 +26,7 @@ namespace ObjectOrientedPrograms
                 Console.WriteLine("1: AddressBook");
                 Console.WriteLine("2: InventoryDataManagement");
                 Console.WriteLine("3: InventoryManager");
+                Console.WriteLine("4: StockAccountManagement");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -43,6 +44,10 @@ namespace ObjectOrientedPrograms
 
                         case 3:
                             InventoryManager.InventoryManagerFunction();
+                            break;
+
+                        case 4:
+                            StockAccountManagement.StockReport.StockReportDetails();
                             break;
 
                         case 0:

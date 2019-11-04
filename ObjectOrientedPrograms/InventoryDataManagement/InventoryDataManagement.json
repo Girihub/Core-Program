@@ -11,14 +11,14 @@
       "pricePerKg": 55
     },
     {
-      "name": "ddd",
-      "weight": "234",
+      "name": "zzz",
+      "weight": "123",
       "pricePerKg": "12"
     },
     {
-      "name": "qqq",
-      "weight": "23",
-      "pricePerKg": "1"
+      "name": "aa",
+      "weight": 12,
+      "pricePerKg": 12
     }
   ],
   "Pulses": [
