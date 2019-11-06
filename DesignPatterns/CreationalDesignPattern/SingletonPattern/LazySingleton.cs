@@ -10,13 +10,14 @@ namespace DesignPatterns.CreationalDesignPattern.SingletonPattern
         /// private instance set to null
         /// </summary>
         private static LazySingleton instance = null;
-
+        private static int counter = 0;
         /// <summary>
         /// Private constructor
         /// </summary>
         private LazySingleton()
         {
-            Console.WriteLine("This is LazySingleton Constructor");
+            counter++;
+            Console.WriteLine("This is LazySingleton Constructor. Counter is " + counter);
         }
 
         /// <summary>

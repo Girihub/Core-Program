@@ -10,13 +10,14 @@ namespace DesignPatterns.CreationalDesignPattern.SingletonPattern
         /// instance initialized when loading the class
         /// </summary>
         private static EagerSingleton instance = new EagerSingleton();
-
+        private static int counter = 0;
         /// <summary>
         /// Private Constructor
         /// </summary>
         private EagerSingleton()
         {
-            Console.WriteLine("This is EagerSingleton Constructor");
+            counter++;
+            Console.WriteLine("This is EagerSingleton Constructor. Counter is " + counter);
         }
 
         /// <summary>

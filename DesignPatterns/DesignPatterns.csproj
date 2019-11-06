@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CreationalDesignPattern\" />
+    <Folder Include="BehavioralDesignPattern\" />
+    <Folder Include="CreationalDesignPattern\FactoryPattern\" />
+    <Folder Include="CreationalDesignPattern\PrototypePattern\" />
+    <Folder Include="StructuralDesignPattern\" />
   </ItemGroup>
 
 </Project>
