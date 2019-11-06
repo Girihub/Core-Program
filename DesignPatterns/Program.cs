@@ -13,9 +13,9 @@ namespace DesignPatterns
             while (!exit)
             {
                 Console.WriteLine();
-                Console.WriteLine("1: Creational Design Patteen");
-                Console.WriteLine("2: Behavioral Design Patteen");
-                Console.WriteLine("3: Structural Design Patteen");
+                Console.WriteLine("1: Creational Design Pattern");
+                Console.WriteLine("2: Behavioral Design Pattern");
+                Console.WriteLine("3: Structural Design Pattern");
                 Console.WriteLine("0: Exit");
                 string input = Console.ReadLine();
                 if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -27,8 +27,7 @@ namespace DesignPatterns
                             CreationalDesignPattern.Display.DisplayFunction();
                             break;
 
-                        case 2:
-                            
+                        case 2:                            
                             break;
 
                         case 3:

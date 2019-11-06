@@ -15,6 +15,8 @@ namespace DesignPatterns.CreationalDesignPattern.SingletonPattern
             if(instanceOne == instanceThree)
             {
                 Console.WriteLine("Both instances are same");
+                Console.WriteLine("instanceOne hashcode is " + instanceOne.GetHashCode());
+                Console.WriteLine("instanceThree hashcode is " + instanceThree.GetHashCode());
             }
         }
 
@@ -26,6 +28,8 @@ namespace DesignPatterns.CreationalDesignPattern.SingletonPattern
             if (instanceOne == instanceTwo)
             {
                 Console.WriteLine("Both instances are same");
+                Console.WriteLine("instanceOne hashcode is " + instanceOne.GetHashCode());
+                Console.WriteLine("instanceTwo hashcode is " + instanceTwo.GetHashCode());
             }
         }
 
@@ -37,6 +41,8 @@ namespace DesignPatterns.CreationalDesignPattern.SingletonPattern
             if (instanceOne == instanceTwo)
             {
                 Console.WriteLine("Both instances are same");
+                Console.WriteLine("instanceOne hashcode is " + instanceOne.GetHashCode());
+                Console.WriteLine("instanceTwo hashcode is " + instanceTwo.GetHashCode());
             }
         }
 
@@ -48,6 +54,8 @@ namespace DesignPatterns.CreationalDesignPattern.SingletonPattern
             if (instanceOne == instanceTwo)
             {
                 Console.WriteLine("Both instances are same");
+                Console.WriteLine("instanceOne hashcode is " + instanceOne.GetHashCode());
+                Console.WriteLine("instanceTwo hashcode is " + instanceTwo.GetHashCode());
             }
         }
     }

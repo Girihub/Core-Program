@@ -19,7 +19,7 @@ namespace DesignPatterns.CreationalDesignPattern
                     break;
 
                 case 2:
-
+                    FactoryPattern.FactoryPatternInput.FactoryInput();
                     break;
 
                 case 3:
