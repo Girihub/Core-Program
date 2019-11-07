@@ -9,7 +9,7 @@ namespace DesignPatterns.StructuralDesignPattern
         public static void DisplayFunction()
         {
             Console.WriteLine("1: Adapter Patteen");
-            Console.WriteLine("2:  Patteen");
+            Console.WriteLine("2: Facade Patteen");
             Console.WriteLine("3:  Patteen");
             int input = Convert.ToInt32(Console.ReadLine());
             switch (input)
@@ -20,7 +20,8 @@ namespace DesignPatterns.StructuralDesignPattern
                     break;
 
                 case 2:
-                   
+                    FacadePattern.FacadePatternTest facadePattern = new FacadePattern.FacadePatternTest();
+                    facadePattern.FacadeTest();
                     break;
 
                 case 3:
