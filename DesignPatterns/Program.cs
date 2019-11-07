@@ -9,46 +9,54 @@ namespace DesignPatterns
     {
         public static void Main(string[] args)
         {
-            bool exit = false;
-            while (!exit)
+            try
             {
-                Console.WriteLine();
-                Console.WriteLine("1: Creational Design Pattern");
-                Console.WriteLine("2: Behavioral Design Pattern");
-                Console.WriteLine("3: Structural Design Pattern");
-                Console.WriteLine("0: Exit");
-                string input = Console.ReadLine();
-                if (Regex.IsMatch(input, @"^[0-9]+$"))
+                bool exit = false;
+                while (!exit)
                 {
-                    int num = Convert.ToInt32(input);
-                    switch (num)
+                    Console.WriteLine();
+                    Console.WriteLine("1: Creational Design Pattern");
+                    Console.WriteLine("2: Behavioral Design Pattern");
+                    Console.WriteLine("3: Structural Design Pattern");
+                    Console.WriteLine("0: Exit");
+                    string input = Console.ReadLine();
+                    if (Regex.IsMatch(input, @"^[0-9]+$"))
                     {
-                        case 1:
-                            CreationalDesignPattern.Display.DisplayFunction();
-                            break;
+                        int num = Convert.ToInt32(input);
+                        switch (num)
+                        {
+                            case 1:
+                                CreationalDesignPattern.Display.DisplayFunction();
+                                break;
 
-                        case 2:                            
-                            break;
+                            case 2:
+                                
+                                break;
 
-                        case 3:
+                            case 3:
+                                StructuralDesignPattern.Display.DisplayFunction();
+                                break;
 
-                            break;
+                            case 0:
+                                exit = true;
+                                break;
 
-                        case 0:
-                            exit = true;
-                            break;
-
-                        default:
-                            Console.WriteLine("Invalid input");
-                            Console.WriteLine();
-                            break;
+                            default:
+                                Console.WriteLine("Invalid input");
+                                Console.WriteLine();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter valid input to run any program");
+                        Console.WriteLine();
                     }
                 }
-                else
-                {
-                    Console.WriteLine("Enter valid input to run any program");
-                    Console.WriteLine();
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }

@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.CreationalDesignPattern
+namespace DesignPatterns.StructuralDesignPattern
 {
     public class Display
     {
         public static void DisplayFunction()
         {
-            Console.WriteLine("1: Singleton Patteen");
-            Console.WriteLine("2: Factory Patteen");
-            Console.WriteLine("3: Prototype Patteen");
+            Console.WriteLine("1: Adapter Patteen");
+            Console.WriteLine("2:  Patteen");
+            Console.WriteLine("3:  Patteen");
             int input = Convert.ToInt32(Console.ReadLine());
             switch (input)
             {
                 case 1:
-                    SingletonPattern.Utility.GetSingleton();
+                    AdapterPattern.AdapterPatternTest adapterPatternTest = new AdapterPattern.AdapterPatternTest();
+                    adapterPatternTest.AdapterPatternFunction();
                     break;
 
                 case 2:
-                    FactoryPattern.FactoryPatternInput.FactoryInput();
+                   
                     break;
 
                 case 3:
-                    PrototypePattern.PrototypePatternTest.PrototypeFunction();
+                    
                     break;
 
                 default:
