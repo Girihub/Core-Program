@@ -8,9 +8,9 @@ namespace DesignPatterns.StructuralDesignPattern
     {
         public static void DisplayFunction()
         {
-            Console.WriteLine("1: Adapter Patteen");
-            Console.WriteLine("2: Facade Patteen");
-            Console.WriteLine("3:  Patteen");
+            Console.WriteLine("1: Adapter Pattern");
+            Console.WriteLine("2: Facade Pattern");
+            Console.WriteLine("3: Proxy Pattern");
             int input = Convert.ToInt32(Console.ReadLine());
             switch (input)
             {
@@ -25,7 +25,8 @@ namespace DesignPatterns.StructuralDesignPattern
                     break;
 
                 case 3:
-                    
+                    ProxyPattern.ProxyTest proxyTest = new ProxyPattern.ProxyTest();
+                    proxyTest.ProxyTestFunction();
                     break;
 
                 default:
