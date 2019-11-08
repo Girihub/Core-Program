@@ -30,7 +30,7 @@ namespace DesignPatterns
                                 break;
 
                             case 2:
-                                
+                                BehavioralDesignPattern.Display.DisplayFunction();
                                 break;
 
                             case 3:

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.CreationalDesignPattern
+namespace DesignPatterns.BehavioralDesignPattern
 {
     public class Display
     {
@@ -10,22 +10,23 @@ namespace DesignPatterns.CreationalDesignPattern
         {
             try
             {
-                Console.WriteLine("1: Singleton Patteen");
-                Console.WriteLine("2: Factory Patteen");
-                Console.WriteLine("3: Prototype Patteen");
+                Console.WriteLine("1: Observer Patteen");
+                Console.WriteLine("2: Visitor Patteen");
+                Console.WriteLine("3: Mediator Patteen");
                 int input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
                     case 1:
-                        SingletonPattern.Utility.GetSingleton();
+                        ObserverPattern.ObserverTest observerTest = new ObserverPattern.ObserverTest();
+                        observerTest.ObserverFunction();
                         break;
 
                     case 2:
-                        FactoryPattern.FactoryPatternInput.FactoryInput();
+
                         break;
 
                     case 3:
-                        PrototypePattern.PrototypePatternTest.PrototypeFunction();
+
                         break;
 
                     default:
