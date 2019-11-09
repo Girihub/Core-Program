@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.BehavioralDesignPattern.VisitorPattern
 {
-    interface ShopingCartVisitor
+    public interface ShopingCartVisitor
     {
         int Visit(Book book);
         int Visit(Fruit fruit);

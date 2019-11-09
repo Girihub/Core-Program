@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DesignPatterns.BehavioralDesignPattern.VisitorPattern
 {
-    interface ItemElement
+    internal interface ItemElement
     {
-        public int Accept(ShopingCartVisitor visitor);
+        int Accept(ShopingCartVisitor visitor);
     }
 }

@@ -22,7 +22,8 @@ namespace DesignPatterns.BehavioralDesignPattern
                         break;
 
                     case 2:
-
+                        VisitorPattern.ShoppingCartImplement shoppingCart = new VisitorPattern.ShoppingCartImplement();
+                        shoppingCart.ShoppingCartDisplay();
                         break;
 
                     case 3:
