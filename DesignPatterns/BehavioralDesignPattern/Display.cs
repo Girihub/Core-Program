@@ -27,7 +27,8 @@ namespace DesignPatterns.BehavioralDesignPattern
                         break;
 
                     case 3:
-
+                        MediatorPattern.MediatorPattern mediatorPattern = new MediatorPattern.MediatorPattern();
+                        mediatorPattern.MediatorFunction();
                         break;
 
                     default:
