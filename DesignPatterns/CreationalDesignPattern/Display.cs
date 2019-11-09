@@ -1,11 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿//----------------------------------------------------
+// <copyright file="Display.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 
 namespace DesignPatterns.CreationalDesignPattern
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Display as a class to check Creational Design Pattern
+    /// </summary>
     public class Display
     {
+        /// <summary>
+        /// Function to execute Creational Design Pattern
+        /// </summary>
         public static void DisplayFunction()
         {
             try

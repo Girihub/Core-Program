@@ -1,11 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿//----------------------------------------------------
+// <copyright file="Display.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 
 namespace DesignPatterns.BehavioralDesignPattern
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Display class to check various Behavioral patterns
+    /// </summary>
     public class Display
     {
+        /// <summary>
+        /// DisplayFunction as a function
+        /// </summary>
         public static void DisplayFunction()
         {
             try

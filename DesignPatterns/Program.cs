@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿//----------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 
 namespace DesignPatterns
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
+    /// <summary>
+    /// Program as a class
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// main function
+        /// </summary>
+        /// <param name="args">args as a parameter</param>
         public static void Main(string[] args)
         {
             try

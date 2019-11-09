@@ -1,32 +1,57 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿//----------------------------------------------------
+// <copyright file="WheatherStation.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 
 namespace DesignPatterns.BehavioralDesignPattern.ObserverPattern
 {
-    public class WheatherStation : Subject
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// class WheatherStation implements interface ISubject
+    /// </summary>
+    public class WheatherStation : ISubject
     {
         private int temperature = 43;
-        ArrayList Observers = new ArrayList(); 
+        ArrayList observers = new ArrayList();
+
+        /// <summary>
+        /// Function to add observer
+        /// </summary>
+        /// <param name="observer">observer as a parameter</param>
         public void Add(IObserver observer)
         {
-            this.Observers.Add(observer);
+            this.observers.Add(observer);
         }
 
+        /// <summary>
+        /// Function to notify update to observer
+        /// </summary>
         public void Notify()
         {
-            foreach(IObserver observer in this.Observers)
+            foreach(IObserver observer in this.observers)
             {
                 observer.Update();
             }
         }
 
+        /// <summary>
+        /// Function to remove observer
+        /// </summary>
+        /// <param name="observer">observer as a parameter</param>
         public void Remove(IObserver observer)
         {
             this.Remove(observer);
         }
 
+        /// <summary>
+        /// Function to get temperature
+        /// </summary>
+        /// <returns>returns temperature value</returns>
         public int GetTemperature()
         {
             return this.temperature;
