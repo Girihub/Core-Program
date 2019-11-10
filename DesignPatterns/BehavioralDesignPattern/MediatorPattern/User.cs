@@ -21,7 +21,7 @@ namespace DesignPatterns.BehavioralDesignPattern.MediatorPattern
         private string name;
 
         /// <summary>
-        /// Constructor for class
+        /// Initializes a new instance of the <see cref="User"/> class.
         /// </summary>
         /// <param name="name">name as a parameter</param>
         public User(string name)

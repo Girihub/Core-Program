@@ -1,15 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿//----------------------------------------------------
+// <copyright file="Laptop.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 
 namespace DesignPatterns.CreationalDesignPattern.FactoryPattern
 {
-    class Laptop:Computer
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// class laptop implements interface computer
+    /// </summary>
+    public class Laptop : Computer
     {
+        /// <summary>
+        /// private field ram
+        /// </summary>
         private string ram;
+
+        /// <summary>
+        /// private field
+        /// </summary>
         private string hdd;
+
+        /// <summary>
+        /// private field
+        /// </summary>
         private string cpu;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Laptop"/> class.
+        /// </summary>
+        /// <param name="ram">RAM as a parameter</param>
+        /// <param name="hdd">HDD as a parameter</param>
+        /// <param name="cpu">CPU as a parameter</param>
         public Laptop(string ram, string hdd, string cpu)
         {
             this.ram = ram;
@@ -17,17 +43,29 @@ namespace DesignPatterns.CreationalDesignPattern.FactoryPattern
             this.cpu = cpu;
         }
 
-        public override string getCPU()
+        /// <summary>
+        /// function for CPU
+        /// </summary>
+        /// <returns>override and returns CPU</returns>
+        public override string GetCPU()
         {
             return this.cpu;
         }
 
-        public override string getHDD()
+        /// <summary>
+        /// function for HDD
+        /// </summary>
+        /// <returns>override and returns HDD</returns>
+        public override string GetHDD()
         {
             return this.hdd;
         }
 
-        public override string getRAM()
+        /// <summary>
+        /// function for ram
+        /// </summary>
+        /// <returns>override and returns ram</returns>
+        public override string GetRAM()
         {
             return this.ram;
         }

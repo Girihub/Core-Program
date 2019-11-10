@@ -27,7 +27,7 @@ namespace DesignPatterns.BehavioralDesignPattern.VisitorPattern
         private string name;
 
         /// <summary>
-        /// constructor for class
+        /// Initializes a new instance of the <see cref="Fruit"/> class.
         /// </summary>
         /// <param name="pricePerKg">pricePerKg as a parameter</param>
         /// <param name="weight">weight as a parameter</param>

@@ -1,11 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿//----------------------------------------------------
+// <copyright file="Display.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 
 namespace DesignPatterns.StructuralDesignPattern
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Display class for Structural Design Pattern
+    /// </summary>
     public class Display
     {
+        /// <summary>
+        /// Function to execute all Structural Design Patterns
+        /// </summary>
         public static void DisplayFunction()
         {
             try

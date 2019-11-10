@@ -19,7 +19,7 @@ namespace DesignPatterns.BehavioralDesignPattern.VisitorPattern
         /// Function to accept the visitor
         /// </summary>
         /// <param name="visitor">visitor as a parameter</param>
-        /// <returns>returns int</returns>
+        /// <returns>returns integer</returns>
         int Accept(IShopingCartVisitor visitor);
     }
 }

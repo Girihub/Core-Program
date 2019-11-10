@@ -19,19 +19,19 @@ namespace DesignPatterns.CreationalDesignPattern.FactoryPattern
         /// function to return RAM information
         /// </summary>
         /// <returns>returns RAM information</returns>
-        public abstract string getRAM();
+        public abstract string GetRAM();
 
         /// <summary>
         /// function to return Hard Disk Drive information
         /// </summary>
         /// <returns>returns Hard Disk Drive information</returns>
-        public abstract string getHDD();
+        public abstract string GetHDD();
 
         /// <summary>
         /// function to return CPU information
         /// </summary>
         /// <returns>returns CPU information</returns>
-        public abstract string getCPU();
+        public abstract string GetCPU();
 
         /// <summary>
         /// Function to return computer information
@@ -39,7 +39,7 @@ namespace DesignPatterns.CreationalDesignPattern.FactoryPattern
         /// <returns>return computer information</returns>
         public string toString()
         {
-            return "RAM " + this.getRAM() + ", HDD " + this.getHDD() + ", CPU " + getCPU();
+            return "RAM " + this.GetRAM() + ", HDD " + this.GetHDD() + ", CPU " + this.GetCPU();
         }
     }
 }

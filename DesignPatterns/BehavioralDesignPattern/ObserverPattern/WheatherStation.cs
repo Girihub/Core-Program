@@ -12,12 +12,19 @@ namespace DesignPatterns.BehavioralDesignPattern.ObserverPattern
     using System.Text;
 
     /// <summary>
-    /// class WheatherStation implements interface ISubject
+    /// class implements interface ISubject
     /// </summary>
     public class WheatherStation : ISubject
-    {
+    {        
+        /// <summary>
+        /// create new list for observers
+        /// </summary>
+        private ArrayList observers = new ArrayList();
+
+        /// <summary>
+        /// private field temperature
+        /// </summary>
         private int temperature = 43;
-        ArrayList observers = new ArrayList();
 
         /// <summary>
         /// Function to add observer
@@ -33,7 +40,7 @@ namespace DesignPatterns.BehavioralDesignPattern.ObserverPattern
         /// </summary>
         public void Notify()
         {
-            foreach(IObserver observer in this.observers)
+            foreach (IObserver observer in this.observers)
             {
                 observer.Update();
             }

@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿//----------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 
 namespace DesignPatterns.StructuralDesignPattern.ProxyPattern
 {
-    public class ProxyInternet:Internet
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Text;
+
+    public class ProxyInternet:IInternet
     {
-        private Internet internet = new RealInternet();
+        private IInternet internet = new RealInternet();
         ArrayList bannedSites = new ArrayList();
         public ProxyInternet()
         {

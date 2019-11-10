@@ -16,17 +16,17 @@ namespace DesignPatterns.BehavioralDesignPattern.ObserverPattern
     public class PhoneDisplay : IObserver
     {
         /// <summary>
-        /// private field wheatherStation
+        /// private field weatherStation
         /// </summary>
         private WheatherStation wheatherStation;
 
         /// <summary>
-        /// Function to display data in phone
+        /// Initializes a new instance of the <see cref="PhoneDisplay"/> class.
         /// </summary>
-        /// <param name="wheatherStation">wheatherStation as a parameter</param>
-        public PhoneDisplay(WheatherStation wheatherStation)
+        /// <param name="weatherStation">weatherStation as a parameter</param>
+        public PhoneDisplay(WheatherStation weatherStation)
         {
-            this.wheatherStation = wheatherStation;
+            this.wheatherStation = weatherStation;
         }
 
         /// <summary>

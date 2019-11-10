@@ -21,7 +21,7 @@ namespace DesignPatterns.BehavioralDesignPattern.ObserverPattern
         private WheatherStation wheatherStation;
 
         /// <summary>
-        /// ComputerDisplay as a function
+        /// Initializes a new instance of the <see cref="ComputerDisplay"/> class.
         /// </summary>
         /// <param name="wheatherStation">weatherStation as a parameter</param>
         public ComputerDisplay(WheatherStation wheatherStation)

@@ -1,11 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿//----------------------------------------------------
+// <copyright file="Utility.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+//----------------------------------------------------
 
 namespace DesignPatterns.CreationalDesignPattern.SingletonPattern
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Utility as a class
+    /// </summary>
     public class Utility
     {
+        /// <summary>
+        /// GetSingleton function to get all the singleton patterns
+        /// </summary>
         public static void GetSingleton()
         {
             Console.WriteLine("1: Eager Singleton");

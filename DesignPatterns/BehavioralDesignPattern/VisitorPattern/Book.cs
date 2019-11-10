@@ -17,15 +17,15 @@ namespace DesignPatterns.BehavioralDesignPattern.VisitorPattern
         private int price;
 
         /// <summary>
-        /// private field isbnNumber
+        /// private field
         /// </summary>
         private string isbnNumber;
 
         /// <summary>
-        /// define constructor
+        /// Initializes a new instance of the <see cref="Book"/> class.
         /// </summary>
         /// <param name="cost">cost as a parameter</param>
-        /// <param name="isbn">isbn as a parameter</param>
+        /// <param name="isbn">ISBN as a parameter</param>
         public Book(int cost, string isbn)
         {
             this.price = cost;
@@ -42,9 +42,9 @@ namespace DesignPatterns.BehavioralDesignPattern.VisitorPattern
         }
 
         /// <summary>
-        /// Function to get isbn of book
+        /// Function to get ISBN Number of book
         /// </summary>
-        /// <returns>returns isbn code of book</returns>
+        /// <returns>returns ISBN Number code of book</returns>
         public string GetIsbnNumber()
         {
             return this.isbnNumber;

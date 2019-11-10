@@ -1,5 +1,5 @@
 ﻿//----------------------------------------------------
-// <copyright file="ShopingCartVisitor.cs" company="Bridgelabz">
+// <copyright file="IShopingCartVisitor.cs" company="Bridgelabz">
 // Company copyright tag.
 // </copyright>
 //----------------------------------------------------
@@ -11,7 +11,7 @@ namespace DesignPatterns.BehavioralDesignPattern.VisitorPattern
     using System.Text;
 
     /// <summary>
-    /// interface ShopingCartVisitor contains methods to be implemented
+    /// interface contains methods to be implemented
     /// </summary>
     public interface IShopingCartVisitor
     {

@@ -11,7 +11,7 @@ namespace DesignPatterns.BehavioralDesignPattern.VisitorPattern
     using System.Text;
 
     /// <summary>
-    /// ShoppingCartImplement implements ShopingCartVisitor interface
+    /// ShoppingCartImplement implements interface
     /// </summary>
     public class ShoppingCartImplement : IShopingCartVisitor
     {        
