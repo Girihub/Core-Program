@@ -31,6 +31,7 @@ namespace DesignPatterns
                     Console.WriteLine("1: Creational Design Pattern");
                     Console.WriteLine("2: Behavioral Design Pattern");
                     Console.WriteLine("3: Structural Design Pattern");
+                    Console.WriteLine("4: Annoatation");
                     Console.WriteLine("0: Exit");
                     string input = Console.ReadLine();
                     if (Regex.IsMatch(input, @"^[0-9]+$"))
@@ -48,6 +49,10 @@ namespace DesignPatterns
 
                             case 3:
                                 StructuralDesignPattern.Display.DisplayFunction();
+                                break;
+
+                            case 4:
+                                Annotation.AnnoatationTest.AnnoatationFunction();
                                 break;
 
                             case 0:
